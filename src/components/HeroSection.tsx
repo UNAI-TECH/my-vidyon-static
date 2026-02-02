@@ -26,7 +26,7 @@ export const HeroSection = () => {
       <div className="relative z-10 container-custom text-center">
         <ScrollAnimation animation="fade-up">
           <div className="flex justify-center mb-6">
-            <img src="/logo.png" alt="My Vidyon" className="h-20 md:h-24 w-auto drop-shadow-lg opacity-90" />
+            <img src="/logo.png" alt="My Vidyon - School ERP and Student Management Platform" className="h-20 md:h-24 w-auto drop-shadow-lg opacity-90" />
           </div>
         </ScrollAnimation>
 

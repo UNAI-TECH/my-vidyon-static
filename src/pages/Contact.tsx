@@ -111,7 +111,9 @@ const Contact = () => {
     <main className="min-h-screen">
       <SEO
         title="Contact Us - Get in Touch"
-        description="Ready to transform your institution? Contact My Vidyon for a personalized demo or support. We are here to help you find the perfect solution."
+        description="Ready to transform your institution? Contact My Vidyon for a personalized demo, support, or sales inquiries. Our team responds within 24 hours. Email, phone, or visit us today."
+        keywords="contact My Vidyon, school ERP demo, educational software support, ERP sales inquiry, school management consultation, request demo, customer support, technical support"
+        imageAlt="Contact My Vidyon - Get in Touch with Our Team"
       />
       <Navbar />
 

@@ -81,7 +81,9 @@ const AttendanceSystem = () => {
     <main className="min-h-screen">
       <SEO
         title="AI Attendance System - Facial Recognition"
-        description="Automate diverse attendance tracking with our AI-powered facial recognition system. Secure, fast, and accurate attendance for students and staff."
+        description="Automate attendance tracking with our AI-powered facial recognition system. Secure, fast, and accurate biometric attendance for students and staff. Trusted by 500+ schools worldwide."
+        keywords="AI attendance system, facial recognition attendance, biometric attendance for schools, automated attendance tracking, contactless attendance, school attendance software, student attendance monitoring, RFID attendance system"
+        imageAlt="My Vidyon AI Attendance System - Facial Recognition Technology"
       />
       <Navbar />
 

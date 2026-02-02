@@ -110,7 +110,9 @@ const Features = () => {
     <main className="min-h-screen">
       <SEO
         title="Key Features - Intelligent School Management"
-        description="Discover the powerful features of My Vidyon: Real-time analytics, mobile apps, secure cloud storage, and seamless communication tools."
+        description="Discover the powerful features of My Vidyon: Real-time analytics, mobile apps, secure cloud storage, and seamless communication tools. Lightning-fast performance with 99.9% uptime."
+        keywords="school ERP features, cloud-based school management, real-time analytics for schools, mobile school app, secure student data management, school communication tools, automated school administration, AI-powered school analytics"
+        imageAlt="My Vidyon Features - Powerful School Management Capabilities"
       />
       <Navbar />
 

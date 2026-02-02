@@ -20,6 +20,14 @@ const faqs = [
                 question: "Can I try before I buy?",
                 answer: "Absolutely. We offer a 30-day free trial with full access to all features. No credit card required. This gives you ample time to explore the platform and see how it fits your institution's needs.",
             },
+            {
+                question: "What makes My Vidyon different from other school ERP systems?",
+                answer: "My Vidyon stands out with its AI-powered attendance system, intuitive user interface, mobile-first design, and exceptional customer support. We focus on reducing administrative workload while improving parent engagement and student outcomes.",
+            },
+            {
+                question: "Which types of educational institutions can use My Vidyon?",
+                answer: "My Vidyon is designed for K-12 schools, colleges, universities, coaching centers, and training institutes of all sizes - from small schools with 100 students to large institutions with 10,000+ students.",
+            },
         ],
     },
     {
@@ -36,6 +44,14 @@ const faqs = [
             {
                 question: "What are the system requirements?",
                 answer: "My Vidyon is cloud-based and works on any modern web browser (Chrome, Firefox, Safari, Edge). We also offer native mobile apps for iOS and Android. No special hardware or software installation is required.",
+            },
+            {
+                question: "What is your uptime guarantee?",
+                answer: "We guarantee 99.9% uptime with our cloud infrastructure hosted on enterprise-grade servers. We have redundant systems, automatic failover, and 24/7 monitoring to ensure your data is always accessible.",
+            },
+            {
+                question: "Do you provide API access?",
+                answer: "Yes, we provide a comprehensive REST API with detailed documentation for custom integrations. This allows you to connect My Vidyon with your existing tools and build custom applications.",
             },
         ],
     },
@@ -54,6 +70,14 @@ const faqs = [
                 question: "Can I customize the platform?",
                 answer: "Yes! My Vidyon is highly customizable. You can configure workflows, create custom fields, design reports, and even white-label the platform with your institution's branding, logo, and colors.",
             },
+            {
+                question: "Are there any additional costs?",
+                answer: "Our pricing is all-inclusive with no hidden fees. The only additional costs might be for SMS credits (if you choose to send SMS notifications) or advanced customization requests beyond standard configuration.",
+            },
+            {
+                question: "Do you offer discounts for multiple years?",
+                answer: "Yes, we offer attractive discounts for annual subscriptions and multi-year commitments. Contact our sales team for custom pricing based on your institution's needs.",
+            },
         ],
     },
     {
@@ -71,19 +95,98 @@ const faqs = [
                 question: "Do you integrate with other tools?",
                 answer: "Yes, we offer integrations with popular tools like Google Workspace, Microsoft 365, Zoom, payment gateways, SMS providers, and more. We also provide a REST API for custom integrations.",
             },
+            {
+                question: "Can I generate custom reports?",
+                answer: "Yes, My Vidyon includes a powerful report builder that lets you create custom reports with drag-and-drop simplicity. Export reports in PDF, Excel, or CSV formats with one click.",
+            },
+            {
+                question: "Does the system support multiple languages?",
+                answer: "Yes, My Vidyon supports multiple languages including English, Hindi, Tamil, and more. You can switch languages based on user preference, making it accessible to diverse communities.",
+            },
+        ],
+    },
+    {
+        category: "Implementation & Training",
+        questions: [
+            {
+                question: "What is included in the implementation process?",
+                answer: "Our implementation includes system setup, data migration, customization, staff training, testing, and go-live support. We assign a dedicated implementation manager to guide you through every step.",
+            },
+            {
+                question: "How much training is provided?",
+                answer: "We provide unlimited training during the first 3 months, including live sessions, recorded videos, user manuals, and ongoing support. We train administrators, teachers, staff, and even parents on how to use the system effectively.",
+            },
+            {
+                question: "Can you help with change management?",
+                answer: "Yes, we understand that adopting new technology can be challenging. Our team provides change management support, communication templates, and best practices to help your institution transition smoothly.",
+            },
+            {
+                question: "What happens after go-live?",
+                answer: "After go-live, you get continuous support, regular product updates, access to new features, and ongoing training resources. We're committed to your long-term success.",
+            },
+        ],
+    },
+    {
+        category: "Data & Privacy",
+        questions: [
+            {
+                question: "Where is my data stored?",
+                answer: "Your data is stored in secure, enterprise-grade data centers with multiple redundancies. You can choose your preferred data center location based on your country's data residency requirements.",
+            },
+            {
+                question: "Can I export my data?",
+                answer: "Yes, you own your data and can export it anytime in standard formats (CSV, Excel, JSON). There are no lock-in restrictions - you have complete control over your information.",
+            },
+            {
+                question: "How often is data backed up?",
+                answer: "We perform automated backups every 6 hours with 30-day retention. You can also request manual backups anytime. All backups are encrypted and stored in geographically distributed locations.",
+            },
+            {
+                question: "Are you GDPR compliant?",
+                answer: "Yes, My Vidyon is fully GDPR compliant. We have data processing agreements, privacy controls, consent management, and the right to be forgotten built into the platform.",
+            },
         ],
     },
 ];
 
+
 import SEO from "@/components/SEO";
+import { Helmet } from "react-helmet-async";
 
 const FAQ = () => {
+    const siteUrl = 'https://www.myvidyon.com';
+
+    // Generate FAQ schema from the faqs array
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.flatMap(category =>
+            category.questions.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                }
+            }))
+        )
+    };
+
     return (
         <main className="min-h-screen">
             <SEO
                 title="Frequently Asked Questions"
                 description="Find answers to common questions about My Vidyon ERP, implementation, pricing, and support. We are transparent about our services."
+                keywords="school ERP FAQ, educational software questions, ERP implementation, school management pricing, ERP support"
+                imageAlt="My Vidyon FAQ - Common Questions Answered"
             />
+
+            {/* FAQ Schema */}
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
+                </script>
+            </Helmet>
             <Navbar />
 
             {/* Hero */}

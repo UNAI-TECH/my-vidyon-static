@@ -18,6 +18,7 @@ import AccessApplication from "./pages/AccessApplication";
 import WhoWeAre from "./pages/WhoWeAre";
 import LifeAtMyVidyon from "./pages/LifeAtMyVidyon";
 import HowWeHire from "./pages/HowWeHire";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const AppRoutes = () => {
         <Route path="/careers/who-we-are" element={<WhoWeAre />} />
         <Route path="/careers/life-at-my-vidyon" element={<LifeAtMyVidyon />} />
         <Route path="/careers/how-we-hire" element={<HowWeHire />} />
+        <Route path="/sitemap" element={<Sitemap />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

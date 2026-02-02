@@ -39,15 +39,19 @@ const milestones = [
 ];
 
 import SEO from "@/components/SEO";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const About = () => {
   return (
     <main className="min-h-screen">
       <SEO
         title="About Us - Transforming Education Technology"
-        description="Learn about My Vidyon's mission to help schools run smarter. We provide simple, secure ERP solutions that reduce admin workload and empower educators."
+        description="Learn about My Vidyon's mission to help schools run smarter. We provide simple, secure ERP solutions that reduce admin workload and empower educators. Trusted by 500+ institutions worldwide."
+        keywords="about My Vidyon, school ERP company, education technology provider, ERP for schools mission, educational software company, school management solutions provider"
+        imageAlt="About My Vidyon - Transforming Education Through Technology"
       />
       <Navbar />
+      <Breadcrumb />
 
 
       {/* Hero */}

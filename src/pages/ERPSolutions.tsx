@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
@@ -95,8 +96,58 @@ const ERPSolutions = () => {
     <main className="min-h-screen">
       <SEO
         title="ERP Solutions - 12 Integrated Modules"
-        description="Explore our comprehensive school ERP modules: Admission, Fees, Transport, Academics, Communication, and more. A complete system for modern schools."
+        description="Explore our comprehensive school ERP modules: Admission, Fees, Transport, Academics, Communication, and more. A complete system for modern schools with 9 integrated modules."
+        keywords="school ERP modules, integrated school management, academic management system, attendance monitoring software, student information system, fee management software, school communication platform, event management for schools, document management system"
+        imageAlt="My Vidyon ERP Solutions - Comprehensive School Management Modules"
       />
+
+      {/* Product Schema */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "My Vidyon School ERP",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "INR",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "description": "Free trial available. Contact for custom pricing based on institution size."
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "500",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "description": "Comprehensive school ERP system with 9 integrated modules including Admission, Fees, Transport, Academics, Attendance, Communication, Events, Documents, and Analytics.",
+            "featureList": [
+              "Student Admission Management",
+              "Fee Collection & Accounting",
+              "Transport Management",
+              "Academic Management",
+              "AI-Powered Attendance",
+              "Parent-Teacher Communication",
+              "Event Management",
+              "Document Management",
+              "Real-time Analytics"
+            ],
+            "screenshot": "https://www.myvidyon.com/screenshots/erp-dashboard.png",
+            "softwareVersion": "3.0",
+            "releaseNotes": "Latest version with enhanced AI features and mobile apps",
+            "provider": {
+              "@type": "Organization",
+              "name": "My Vidyon",
+              "url": "https://www.myvidyon.com"
+            }
+          })}
+        </script>
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
