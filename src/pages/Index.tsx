@@ -13,10 +13,10 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <SEO
-        title="Leading ERP Solutions for Educational Institutions"
-        description="Transform your institution with My Vidyon's intelligent ERP monitoring, student management, and powerful analytics. Trusted by 500+ schools worldwide with 99.9% uptime."
-        keywords="school ERP software, educational institution management, student information system, attendance tracking system, school administration software, cloud-based school ERP, biometric attendance for schools, parent-teacher communication platform, school fee management, academic management system"
-        imageAlt="My Vidyon - Leading School ERP and Student Management Platform"
+        title="MyVidyon™ – Official ERP Software for Educational Institutions"
+        description="MyVidyon™ is a leading ERP software platform for schools, colleges, and educational institutions. Manage academics, administration, attendance, and more in one powerful system. Official Website of MyVidyon."
+        keywords="MyVidyon, Vidyon, MyVidyon ERP, Vidyon ERP, my vidyon, vidyon software, school ERP software, educational institution management, student information system, attendance tracking system, school administration software, cloud-based school ERP, biometric attendance for schools, parent-teacher communication platform, school fee management, academic management system"
+        imageAlt="MyVidyon - Leading School ERP and Student Management Platform"
       />
       <Navbar />
       <HeroSection />

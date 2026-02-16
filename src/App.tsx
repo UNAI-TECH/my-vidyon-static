@@ -19,6 +19,9 @@ import WhoWeAre from "./pages/WhoWeAre";
 import LifeAtMyVidyon from "./pages/LifeAtMyVidyon";
 import HowWeHire from "./pages/HowWeHire";
 import Sitemap from "./pages/Sitemap";
+import WhatIsMyVidyon from "./pages/WhatIsMyVidyon";
+import AboutMyVidyon from "./pages/AboutMyVidyon";
+import MyVidyonERPSoftware from "./pages/MyVidyonERPSoftware";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +49,11 @@ const AppRoutes = () => {
         <Route path="/features" element={<Features />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ />} />
+        {/* Brand Pages */}
+        <Route path="/what-is-myvidyon" element={<WhatIsMyVidyon />} />
+        <Route path="/about-myvidyon" element={<AboutMyVidyon />} />
+        <Route path="/myvidyon-erp-software" element={<MyVidyonERPSoftware />} />
+        {/* Careers */}
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/job-search" element={<JobSearch />} />
         <Route path="/careers/saved-jobs" element={<SavedJobs />} />

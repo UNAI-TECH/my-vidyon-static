@@ -27,7 +27,7 @@ const SEO = ({
     const location = useLocation();
     const siteUrl = 'https://www.myvidyon.com';
     const currentUrl = `${siteUrl}${location.pathname}`;
-    const fullTitle = `${title} | My Vidyon`;
+    const fullTitle = `${title} | MyVidyon (Vidyon)`;
     const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
     return (
