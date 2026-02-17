@@ -96,22 +96,6 @@ export const Navbar = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {/* Product (Attendance System) */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">Product</NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-background p-1 pr-1.5">
-                  <ul className="bg-popover grid w-[300px] gap-2 rounded-md border p-2 shadow-sm">
-                    <li>
-                      <ListItem
-                        title="Attendance System"
-                        href="/attendance-system"
-                        description="AI-powered facial recognition"
-                        icon={CheckCircle2}
-                      />
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
 
               {/* Features */}
               <NavigationMenuItem>
@@ -172,14 +156,6 @@ export const Navbar = () => {
               onClick={() => setOpen(false)} />
           </MobileDropdown>
 
-          <MobileDropdown title="Product">
-            <MobileLink
-              title="Attendance System"
-              href="/attendance-system"
-              description="AI-powered facial recognition"
-              icon={CheckCircle2}
-              onClick={() => setOpen(false)} />
-          </MobileDropdown>
 
           <Link to="/features" className="text-lg font-semibold py-2 border-b" onClick={() => setOpen(false)}>Features</Link>
           <Link to="/careers" className="text-lg font-semibold py-2 border-b" onClick={() => setOpen(false)}>Careers</Link>

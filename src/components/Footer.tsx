@@ -129,28 +129,55 @@ export const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-background/10">
-        <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-background/60 text-sm">
-            © {currentYear} My Vidyon. All rights reserved.
-          </p>
+        <div className="container-custom py-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Partnership Badge */}
+          <div className="order-1">
+            <a
+              href="https://unaitech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.2)]"
+            >
+              <div className="flex flex-col">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-background/40 font-bold group-hover:text-primary/70 transition-colors">
+                  Presented By
+                </span>
+                <span className="text-xl font-heading font-black tracking-tight text-primary group-hover:scale-105 transition-transform duration-500 origin-left">
+                  UNAI <span className="text-background">TECH</span>
+                </span>
+              </div>
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+                <ArrowUpRight className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                <social.icon className="w-4 h-4" />
-              </a>
-            ))}
+              {/* Subtle animated glow effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-blue-500/50 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+            </a>
           </div>
 
-          <div className="flex items-center gap-6 text-sm text-background/60">
+          {/* Social Links & Copyright */}
+          <div className="flex flex-col items-center md:items-end gap-4 order-2 md:order-3">
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                >
+                  <social.icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+            <p className="text-background/60 text-sm">
+              © {currentYear} My Vidyon. All rights reserved.
+            </p>
+          </div>
+
+          {/* Legal Links */}
+          <div className="flex items-center gap-6 text-sm text-background/60 order-3 md:order-2">
             <Link to="/" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link to="/" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
