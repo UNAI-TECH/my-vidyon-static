@@ -60,7 +60,7 @@ export const Footer = () => {
                 <span>myvidyon@gmail.com</span>
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+91 9043988697"
                 className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors"
               >
                 <Phone className="w-5 h-5" />
@@ -68,7 +68,7 @@ export const Footer = () => {
               </a>
               <div className="flex items-start gap-3 text-background/70">
                 <MapPin className="w-5 h-5 mt-0.5" />
-                <span>123 Education Drive, Tech City, TC 12345</span>
+                <span>UNAI TECH, Chennai, Tamil Nadu</span>
               </div>
             </div>
           </div>
