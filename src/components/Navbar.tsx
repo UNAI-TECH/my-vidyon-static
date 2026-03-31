@@ -53,7 +53,7 @@ export const Navbar = () => {
       <nav className="container-custom flex h-20 items-center justify-between relative">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 font-heading text-2xl font-bold shrink-0 z-20">
-          <img src="/logo.png" alt="My Vidyon" className="h-12 w-auto" />
+          <img id="nav-logo" src="/logo.png" alt="My Vidyon" className="h-12 w-auto opacity-0" />
         </Link>
 
         {/* Desktop Menu - Centered */}
