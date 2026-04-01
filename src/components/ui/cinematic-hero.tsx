@@ -500,7 +500,7 @@ export function CinematicHero({
 
                         {/* IPHONE MOCKUP CONTENT */}
                         <div
-                            className="mockup-scroll-wrapper lg:order-2 relative z-20 flex items-center justify-center w-full h-full max-w-[300px] sm:max-w-md mx-auto lg:pt-20"
+                            className="mockup-scroll-wrapper order-2 lg:order-2 relative z-20 flex items-center justify-center w-full h-full max-w-[300px] sm:max-w-md mx-auto lg:pt-20"
                             style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
                         >
                             <div className="relative w-full h-full flex items-center justify-center transform scale-[0.38] sm:scale-[0.55] md:scale-[0.8] lg:scale-[0.82]">
