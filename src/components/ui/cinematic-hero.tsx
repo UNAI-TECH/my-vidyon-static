@@ -358,7 +358,7 @@ export function CinematicHero({
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top top",
-                    end: isMobile ? "+=2500" : "+=3500",
+                    end: isMobile ? "+=1200" : "+=3000",
                     pin: true,
                     scrub: 1,
                     anticipatePin: 1,
