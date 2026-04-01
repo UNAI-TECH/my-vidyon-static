@@ -368,29 +368,29 @@ export function CinematicHero({
             });
 
             scrollTl
-                .to(".bg-grid-theme", { scale: 1.15, filter: isMobile ? "none" : "blur(8px)", opacity: 0.2, ease: "power2.inOut", duration: 2 }, 0)
-                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: 2 }, 0)
+                .to(".bg-grid-theme", { scale: 1.15, filter: isMobile ? "none" : "blur(8px)", opacity: 0.2, ease: "power2.inOut", duration: isMobile ? 4 : 2 }, 0)
+                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: isMobile ? 4 : 2 }, 0)
                 .to(".hero-logo", {
                     x: () => deltaX,
                     y: () => deltaY,
                     scale: () => targetScale,
                     ease: "power2.inOut",
-                    duration: 3
+                    duration: isMobile ? 5 : 3
                 }, 0)
-                .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, 3)
-                .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, 3)
-                .to(".main-card", { y: 0, ease: "power3.inOut", duration: 2 }, 0)
-                .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: 1.5 })
+                .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, isMobile ? 5 : 3)
+                .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 5 : 3)
+                .to(".main-card", { y: 0, ease: "power3.inOut", duration: isMobile ? 3 : 2 }, isMobile ? 5 : 0)
+                .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 2 : 1.5 })
                 .fromTo(".mockup-scroll-wrapper",
                     { y: 300, z: -500, rotationX: 50, rotationY: -30, autoAlpha: 0, scale: 0.6 },
-                    { y: 0, z: 0, rotationX: 0, rotationY: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 2.5 }, "-=0.8"
+                    { y: 0, z: 0, rotationX: 0, rotationY: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: isMobile ? 3 : 2.5 }, isMobile ? "-=0.5" : "-=0.8"
                 )
-                .fromTo(".phone-widget", { y: 40, autoAlpha: 0, scale: 0.95 }, { y: 0, autoAlpha: 1, scale: 1, stagger: 0.15, ease: "back.out(1.2)", duration: 1.5 }, "-=1.5")
-                .to(".progress-ring", { strokeDashoffset: 60, duration: 2, ease: "power3.inOut" }, "-=1.2")
-                .to(".counter-val", { innerHTML: metricValue, snap: { innerHTML: 1 }, duration: 2, ease: "expo.out" }, "-=2.0")
-                .fromTo(".floating-badge", { y: 100, autoAlpha: 0, scale: 0.7, rotationZ: -10 }, { y: 0, autoAlpha: 1, scale: 1, rotationZ: 0, ease: "back.out(1.5)", duration: 1.5, stagger: 0.2 }, "-=2.0")
-                .fromTo(".card-left-text", { x: -50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, ease: "power4.out", duration: 1.5 }, "-=1.5")
-                .fromTo(".card-right-text", { x: 50, autoAlpha: 0, scale: 0.8 }, { x: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 1.5 }, "<")
+                .fromTo(".phone-widget", { y: 40, autoAlpha: 0, scale: 0.95 }, { y: 0, autoAlpha: 1, scale: 1, stagger: 0.15, ease: "back.out(1.2)", duration: isMobile ? 2 : 1.5 }, "-=1.5")
+                .to(".progress-ring", { strokeDashoffset: 60, duration: isMobile ? 2.5 : 2, ease: "power3.inOut" }, "-=1.2")
+                .to(".counter-val", { innerHTML: metricValue, snap: { innerHTML: 1 }, duration: isMobile ? 2.5 : 2, ease: "expo.out" }, "-=2.0")
+                .fromTo(".floating-badge", { y: 100, autoAlpha: 0, scale: 0.7, rotationZ: -10 }, { y: 0, autoAlpha: 1, scale: 1, rotationZ: 0, ease: "back.out(1.5)", duration: isMobile ? 2 : 1.5, stagger: 0.2 }, "-=2.0")
+                .fromTo(".card-left-text", { x: -50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, ease: "power4.out", duration: isMobile ? 2 : 1.5 }, "-=1.5")
+                .fromTo(".card-right-text", { x: 50, autoAlpha: 0, scale: 0.8 }, { x: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: isMobile ? 2 : 1.5 }, "<")
                 .to({}, { duration: 0.4 })
                 .set(".hero-text-wrapper", { autoAlpha: 0 })
                 .set(".cta-wrapper", { autoAlpha: 1 })
