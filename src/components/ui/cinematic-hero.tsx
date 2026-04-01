@@ -425,22 +425,22 @@ export function CinematicHero({
             <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-40" aria-hidden="true" />
 
             {/* BACKGROUND LAYER: Hero Texts */}
-            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-28 md:-translate-y-20">
+            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-20 md:-translate-y-20">
                 {/* LEFT: Logo */}
-                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start">
+                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-12 md:mt-0">
                     <img
                         src={logoSrc || "/logo.png"}
                         alt="Hero Logo"
-                        className="hero-logo gsap-reveal w-[220px] sm:w-[280px] md:w-[350px] lg:w-[450px] xl:w-[500px] object-contain drop-shadow-2xl"
+                        className="hero-logo gsap-reveal w-[240px] sm:w-[280px] md:w-[350px] lg:w-[450px] xl:w-[500px] object-contain drop-shadow-2xl"
                     />
                 </div>
 
                 {/* RIGHT: Texts */}
                 <div className="flex flex-col items-center justify-center text-center w-full md:w-1/2">
-                    <h1 className="text-track gsap-reveal text-3d-matte text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
+                    <h1 className="text-track gsap-reveal text-3d-matte text-[2.6rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
                         {tagline1}
                     </h1>
-                    <h1 className="text-days gsap-reveal text-amber-matte text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
+                    <h1 className="text-days gsap-reveal text-amber-matte text-[2.6rem] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
                         {tagline2}
                     </h1>
                     {tagline3 && (
