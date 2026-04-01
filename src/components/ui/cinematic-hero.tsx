@@ -379,7 +379,7 @@ export function CinematicHero({
                 }, 0)
                 .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, isMobile ? 5 : 3)
                 .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 5 : 3)
-                .to(".main-card", { y: isMobile ? 40 : 0, ease: "power3.inOut", duration: isMobile ? 3 : 2 }, isMobile ? 5 : 0)
+                .to(".main-card", { y: isMobile ? 180 : 0, ease: "power3.inOut", duration: isMobile ? 3 : 2 }, isMobile ? 5 : 0)
                 .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 2 : 1.5 })
                 .fromTo(".mockup-scroll-wrapper",
                     { y: 300, z: -500, rotationX: 50, rotationY: -30, autoAlpha: 0, scale: 0.6 },
@@ -425,9 +425,9 @@ export function CinematicHero({
             <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-40" aria-hidden="true" />
 
             {/* BACKGROUND LAYER: Hero Texts */}
-            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-start md:justify-center pt-44 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-8 md:-translate-y-20">
+            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center pt-48 md:pt-0 px-10 md:px-12 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto w-full will-change-transform transform-style-3d -translate-y-8 md:-translate-y-20">
                 {/* LEFT: Logo */}
-                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-4 md:mt-0">
+                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-start md:justify-start -mt-4 md:mt-0">
                     <img
                         src={logoSrc || "/logo.png"}
                         alt="Hero Logo"
@@ -436,7 +436,7 @@ export function CinematicHero({
                 </div>
 
                 {/* RIGHT: Texts */}
-                <div className="flex flex-col items-center justify-center text-center w-full md:w-1/2">
+                <div className="flex flex-col items-start md:items-center justify-center text-left md:text-center w-full md:w-1/2">
                     <h1 className="text-track gsap-reveal text-3d-matte text-[2.1rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
                         {tagline1}
                     </h1>
