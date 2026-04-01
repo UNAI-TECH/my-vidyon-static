@@ -211,6 +211,35 @@ const INJECTED_STYLES = `
       stroke-dashoffset: 402;
       stroke-linecap: round;
   }
+
+  .launching-badge-premium {
+      background: linear-gradient(135deg, rgba(251, 177, 47, 0.15) 0%, rgba(251, 177, 47, 0.05) 100%);
+      border: 2px solid rgba(251, 177, 47, 0.4);
+      box-shadow: 
+          0 0 20px rgba(251, 177, 47, 0.15),
+          inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: badge-glow 3s infinite alternate;
+  }
+
+  @keyframes badge-glow {
+      0% { box-shadow: 0 0 15px rgba(251, 177, 47, 0.1); border-color: rgba(251, 177, 47, 0.3); }
+      100% { box-shadow: 0 0 30px rgba(251, 177, 47, 0.25); border-color: rgba(251, 177, 47, 0.6); }
+  }
+
+  .text-shimmer {
+      background: linear-gradient(90deg, #d97706 0%, #f59e0b 25%, #fff 50%, #f59e0b 75%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% auto;
+      animation: shimmer 4s linear infinite;
+  }
+
+  @keyframes shimmer {
+      to { background-position: 200% center; }
+  }
 `;
 
 export interface CinematicHeroProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -430,8 +459,10 @@ export function CinematicHero({
                 <p className="text-muted-foreground text-lg md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed">
                     {ctaDescription}
                 </p>
-                <div className="mt-2 inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[#d97706] font-bold tracking-wide text-lg backdrop-blur-md shadow-sm">
-                    Launching soon...
+                <div className="mt-4 inline-flex items-center justify-center px-10 py-5 rounded-full launching-badge-premium">
+                    <span className="text-shimmer font-black tracking-widest text-xl md:text-3xl uppercase">
+                        Launching soon...
+                    </span>
                 </div>
             </div>
 
