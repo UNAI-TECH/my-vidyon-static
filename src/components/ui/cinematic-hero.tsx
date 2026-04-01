@@ -316,19 +316,19 @@ export function CinematicHero({
         const isMobile = window.innerWidth < 768;
 
         const ctx = gsap.context(() => {
-            gsap.set(".hero-logo", { autoAlpha: 0, x: -60, scale: 0.85, filter: "blur(8px)" });
-            gsap.set(".text-track", { autoAlpha: 0, y: 60, scale: 0.85, filter: "blur(8px)", rotationX: -20 });
+            gsap.set(".hero-logo", { autoAlpha: 0, x: -60, scale: 0.85, filter: isMobile ? "none" : "blur(8px)" });
+            gsap.set(".text-track", { autoAlpha: 0, y: 60, scale: 0.85, filter: isMobile ? "none" : "blur(8px)", rotationX: -20 });
             gsap.set(".text-days", { autoAlpha: 1, clipPath: "inset(0 100% 0 0)" });
             gsap.set(".text-solutions", { autoAlpha: 1, clipPath: "inset(0 100% 0 0)" });
             gsap.set(".counter-val", { innerText: 0 });
             gsap.set(".main-card", { y: window.innerHeight + 200, autoAlpha: 1 });
             gsap.set([".card-left-text", ".card-right-text", ".mockup-scroll-wrapper", ".floating-badge", ".phone-widget"], { autoAlpha: 0 });
-            gsap.set(".cta-wrapper", { autoAlpha: 0, scale: 0.8, filter: "blur(8px)" });
+            gsap.set(".cta-wrapper", { autoAlpha: 0, scale: 0.8, filter: isMobile ? "none" : "blur(8px)" });
 
             const introTl = gsap.timeline({ delay: 0.3 });
             introTl
-                .to(".hero-logo", { duration: 1.8, autoAlpha: 1, x: 0, scale: 1, filter: "blur(0px)", ease: "expo.out" })
-                .to(".text-track", { duration: 1.8, autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", rotationX: 0, ease: "expo.out" }, "<")
+                .to(".hero-logo", { duration: 1.8, autoAlpha: 1, x: 0, scale: 1, filter: "none", ease: "expo.out" })
+                .to(".text-track", { duration: 1.8, autoAlpha: 1, y: 0, scale: 1, filter: "none", rotationX: 0, ease: "expo.out" }, "<")
                 .to(".text-days", { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.2")
                 .to(".text-solutions", { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.0");
 
@@ -358,9 +358,9 @@ export function CinematicHero({
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top top",
-                    end: isMobile ? "+=1000" : "+=2500",
+                    end: isMobile ? "+=600" : "+=1800",
                     pin: true,
-                    scrub: 0.4,
+                    scrub: true,
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
                     onRefresh: calculateOffsets
@@ -368,8 +368,8 @@ export function CinematicHero({
             });
 
             scrollTl
-                .to(".bg-grid-theme", { scale: 1.15, filter: "blur(8px)", opacity: 0.2, ease: "power2.inOut", duration: 2 }, 0)
-                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: 2 }, 0)
+                .to(".bg-grid-theme", { scale: 1.15, filter: isMobile ? "none" : "blur(8px)", opacity: 0.2, ease: "power2.inOut", duration: 2 }, 0)
+                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: 2 }, 0)
                 .to(".hero-logo", {
                     x: () => deltaX,
                     y: () => deltaY,
