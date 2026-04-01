@@ -379,7 +379,7 @@ export function CinematicHero({
                 }, 0)
                 .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, isMobile ? 5 : 3)
                 .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 5 : 3)
-                .to(".main-card", { y: isMobile ? 120 : 0, ease: "power3.inOut", duration: isMobile ? 3 : 2 }, isMobile ? 5 : 0)
+                .to(".main-card", { y: isMobile ? 40 : 0, ease: "power3.inOut", duration: isMobile ? 3 : 2 }, isMobile ? 5 : 0)
                 .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 2 : 1.5 })
                 .fromTo(".mockup-scroll-wrapper",
                     { y: 300, z: -500, rotationX: 50, rotationY: -30, autoAlpha: 0, scale: 0.6 },
@@ -425,22 +425,22 @@ export function CinematicHero({
             <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-40" aria-hidden="true" />
 
             {/* BACKGROUND LAYER: Hero Texts */}
-            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-start md:justify-center pt-28 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-16 md:-translate-y-20">
+            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-start md:justify-center pt-44 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-8 md:-translate-y-20">
                 {/* LEFT: Logo */}
-                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-8 md:mt-0">
+                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-4 md:mt-0">
                     <img
                         src={logoSrc || "/logo.png"}
                         alt="Hero Logo"
-                        className="hero-logo gsap-reveal w-[320px] sm:w-[350px] md:w-[350px] lg:w-[450px] xl:w-[500px] object-contain drop-shadow-2xl"
+                        className="hero-logo gsap-reveal w-[180px] sm:w-[280px] md:w-[350px] lg:w-[450px] xl:w-[500px] object-contain drop-shadow-2xl"
                     />
                 </div>
 
                 {/* RIGHT: Texts */}
                 <div className="flex flex-col items-center justify-center text-center w-full md:w-1/2">
-                    <h1 className="text-track gsap-reveal text-3d-matte text-[3.2rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
+                    <h1 className="text-track gsap-reveal text-3d-matte text-[2.1rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
                         {tagline1}
                     </h1>
-                    <h1 className="text-days gsap-reveal text-amber-matte text-[3.2rem] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
+                    <h1 className="text-days gsap-reveal text-amber-matte text-[2.1rem] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
                         {tagline2}
                     </h1>
                     {tagline3 && (
@@ -500,10 +500,10 @@ export function CinematicHero({
 
                         {/* IPHONE MOCKUP CONTENT */}
                         <div
-                            className="mockup-scroll-wrapper relative z-20 flex items-center justify-center w-full h-full max-w-[340px] sm:max-w-md mx-auto"
+                            className="mockup-scroll-wrapper relative z-20 flex items-center justify-center w-full h-full max-w-[300px] sm:max-w-md mx-auto"
                             style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
                         >
-                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.45] sm:scale-[0.65] md:scale-[0.9] lg:scale-110">
+                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.38] sm:scale-[0.55] md:scale-[0.8] lg:scale-110">
 
                                 <div
                                     ref={mockupRef}
