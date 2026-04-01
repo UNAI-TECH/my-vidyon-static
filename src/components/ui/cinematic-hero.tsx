@@ -379,7 +379,7 @@ export function CinematicHero({
                 }, 0)
                 .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, isMobile ? 5 : 3)
                 .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 5 : 3)
-                .to(".main-card", { y: 0, ease: "power3.inOut", duration: isMobile ? 3 : 2 }, isMobile ? 5 : 0)
+                .to(".main-card", { y: isMobile ? 120 : 0, ease: "power3.inOut", duration: isMobile ? 3 : 2 }, isMobile ? 5 : 0)
                 .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 2 : 1.5 })
                 .fromTo(".mockup-scroll-wrapper",
                     { y: 300, z: -500, rotationX: 50, rotationY: -30, autoAlpha: 0, scale: 0.6 },
@@ -425,9 +425,9 @@ export function CinematicHero({
             <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-40" aria-hidden="true" />
 
             {/* BACKGROUND LAYER: Hero Texts */}
-            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-40 md:-translate-y-20">
+            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-start md:justify-center pt-28 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-16 md:-translate-y-20">
                 {/* LEFT: Logo */}
-                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-12 md:mt-0">
+                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-8 md:mt-0">
                     <img
                         src={logoSrc || "/logo.png"}
                         alt="Hero Logo"
@@ -498,9 +498,12 @@ export function CinematicHero({
                             )}
                         </div>
 
-                        <div className="mockup-scroll-wrapper order-2 lg:order-2 relative w-full h-[200px] sm:h-[320px] lg:h-[600px] flex items-center justify-center z-10 shrink-0" style={{ perspective: "1000px" }}>
-
-                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.35] sm:scale-[0.55] md:scale-[0.8] lg:scale-100">
+                        {/* IPHONE MOCKUP CONTENT */}
+                        <div
+                            className="mockup-scroll-wrapper relative z-20 flex items-center justify-center w-full h-full max-w-[340px] sm:max-w-md mx-auto"
+                            style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
+                        >
+                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.45] sm:scale-[0.65] md:scale-[0.9] lg:scale-110">
 
                                 <div
                                     ref={mockupRef}
