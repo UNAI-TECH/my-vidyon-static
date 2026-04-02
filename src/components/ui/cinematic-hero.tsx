@@ -378,8 +378,8 @@ export function CinematicHero({
                     duration: isMobile ? 3 : 3
                 }, 0)
                 .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, isMobile ? 3 : 3)
-                .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 3 : 3)
-                .to(".main-card", { y: isMobile ? 40 : 0, ease: "power3.inOut", duration: isMobile ? 2.5 : 2 }, isMobile ? 2 : 0)
+                .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 2.5 : 3)
+                .to(".main-card", { autoAlpha: 1, y: isMobile ? 0 : 0, ease: "power3.inOut", duration: isMobile ? 1.5 : 2 }, isMobile ? 0.5 : 0)
                 .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 2 : 1.5 })
                 .fromTo(".mockup-scroll-wrapper",
                     { y: 300, z: -500, rotationX: 50, rotationY: -30, autoAlpha: 0, scale: 0.6 },
