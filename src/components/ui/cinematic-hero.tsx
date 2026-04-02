@@ -425,7 +425,7 @@ export function CinematicHero({
             <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-40" aria-hidden="true" />
 
             {/* BACKGROUND LAYER: Hero Texts */}
-            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-start md:justify-center pt-44 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-8 md:-translate-y-20">
+            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-start md:justify-center pt-52 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-8 md:-translate-y-20">
                 {/* LEFT: Logo */}
                 <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-4 md:mt-0">
                     <img
@@ -475,7 +475,7 @@ export function CinematicHero({
                     <div className="card-sheen" aria-hidden="true" />
 
                     {/* DYNAMIC RESPONSIVE GRID */}
-                    <div className="relative w-full h-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-12 flex flex-col justify-center sm:justify-evenly gap-3 sm:gap-6 lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 pt-24 pb-8 lg:py-0 overflow-y-auto lg:overflow-visible">
+                    <div className="relative w-full h-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-12 flex flex-col justify-center sm:justify-evenly gap-3 sm:gap-6 lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 pt-20 pb-8 lg:py-0 overflow-y-auto lg:overflow-visible">
 
                         {/* Mobile Only Heading */}
                         <div className="card-left-text lg:hidden w-full flex justify-center text-center z-20 px-2 shrink-0 order-1">
@@ -503,7 +503,7 @@ export function CinematicHero({
                             className="mockup-scroll-wrapper order-2 lg:order-2 relative z-20 flex items-center justify-center w-full h-full max-w-[300px] sm:max-w-md mx-auto lg:pt-20"
                             style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
                         >
-                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.38] sm:scale-[0.55] md:scale-[0.8] lg:scale-[0.82]">
+                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.45] sm:scale-[0.6] md:scale-[0.8] lg:scale-[0.82]">
 
                                 <div
                                     ref={mockupRef}
@@ -607,7 +607,7 @@ export function CinematicHero({
                             </div>
                         </div>
 
-                        <div className="card-left-text gsap-reveal order-3 lg:order-1 flex flex-col justify-center text-center lg:text-left z-20 w-full lg:max-w-none px-4 lg:px-0 shrink-0">
+                        <div className="card-left-text gsap-reveal order-3 lg:order-1 flex flex-col justify-center text-center lg:text-left z-20 w-full lg:max-w-none px-4 lg:px-0 shrink-0 -mt-6 lg:mt-0">
                             <h3 className="hidden lg:block text-foreground text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 lg:mb-5 tracking-tight leading-tight">
                                 {cardHeading}
                             </h3>
