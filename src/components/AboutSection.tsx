@@ -1,29 +1,51 @@
 import { Link } from "react-router-dom";
-import { ChevronRight, ScanFace, LayoutGrid, Wallet, TrendingUp } from "lucide-react";
+import { ChevronRight, ScanFace, LayoutGrid, Wallet, TrendingUp, MessagesSquare, GraduationCap } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
-import FeatureSpotlight from "./FeatureSpotlight";
+import { MagicBento, MagicBentoItem } from "./ui/MagicBento";
 
-const features = [
+const features: MagicBentoItem[] = [
   {
     icon: ScanFace,
     title: "Smart Attendance Monitoring",
     description: "AI-powered, camera-based attendance that captures accurate, real-time student presence and keeps parents informed instantly.",
+    label: "Security",
+    color: "hsl(var(--card))"
   },
   {
     icon: LayoutGrid,
     title: "Comprehensive Dashboards",
     description: "Role-based school dashboards designed for administrators, teachers, parents, and students—clear data, zero confusion.",
+    label: "Overview",
+    color: "hsl(var(--card))"
   },
   {
     icon: Wallet,
     title: "Secure Fee Management",
     description: "End-to-end school fee management with safe online payments, automated tracking, and complete financial transparency.",
+    label: "Finance",
+    color: "hsl(var(--card))"
   },
   {
     icon: TrendingUp,
     title: "Performance Analytics",
     description: "Data-driven academic analytics that turn student performance into clear, actionable insights for better outcomes.",
+    label: "Insights",
+    color: "hsl(var(--card))"
   },
+  {
+    icon: MessagesSquare,
+    title: "Parent Communication",
+    description: "Multi-channel messaging system for circulars, events, and performance updates keeping parents always in the loop.",
+    label: "Collaboration",
+    color: "hsl(var(--card))"
+  },
+  {
+    icon: GraduationCap,
+    title: "Exam & Result Management",
+    description: "Fully automated grading, result processing, and report card generation with customizable marking schemes.",
+    label: "Academics",
+    color: "hsl(var(--card))"
+  }
 ];
 
 export const AboutSection = () => {
@@ -73,28 +95,21 @@ export const AboutSection = () => {
           </div>
         </ScrollAnimation>
 
-        {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-          {features.map((feature, index) => (
-            <ScrollAnimation key={index} animation="fade-up" delay={450 + index * 100}>
-              <FeatureSpotlight className="group p-6 text-center h-full border-2 border-primary/30 hover:border-primary/60 shadow-[0_0_15px_rgba(250,177,47,0.3)] hover:shadow-[0_0_25px_rgba(250,177,47,0.5)] transition-all duration-300">
-                {/* Icon with animated background */}
-                <div className="relative mx-auto mb-6 w-20 h-20 flex items-center justify-center">
-                  <div className="absolute inset-0 bg-primary/5 rounded-3xl rotate-45 group-hover:rotate-90 transition-transform duration-500 ease-out" />
-                  <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-12 group-hover:rotate-0 transition-transform duration-500 ease-out" />
-                  <feature.icon className="relative z-10 w-9 h-9 text-primary group-hover:scale-110 transition-transform duration-300" />
-                </div>
-
-                <h3 className="font-heading font-bold text-lg mb-3">
-                  {feature.title}
-                </h3>
-
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </FeatureSpotlight>
-            </ScrollAnimation>
-          ))}
+        {/* Features Grid - Bento Style */}
+        <div className="mt-10">
+          <ScrollAnimation animation="fade-up" delay={450}>
+            <MagicBento
+              items={features}
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={true}
+              enableMagnetism={true}
+              clickEffect={true}
+              glowColor="250, 177, 47"
+            />
+          </ScrollAnimation>
         </div>
 
         {/* CTA */}
