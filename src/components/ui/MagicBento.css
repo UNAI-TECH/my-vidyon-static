@@ -75,16 +75,20 @@
 
 .magic-bento-card__title {
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
     margin: 0 0 0.5em;
     color: hsl(var(--foreground));
     font-family: var(--font-heading);
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .magic-bento-card__description {
     font-size: 0.9rem;
     line-height: 1.5;
     color: hsl(var(--muted-foreground));
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .magic-bento-card--text-autohide .magic-bento-card__title,

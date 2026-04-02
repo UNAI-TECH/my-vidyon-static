@@ -151,7 +151,7 @@ const ERPSolutions = () => {
       <Navbar />
 
       {/* Hero */}
-      <section id="hero" className="h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
+      <section id="hero" className="min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden py-12 md:py-0">
         <div className="absolute inset-0 bg-gradient-hero" />
 
         <div className="container-custom relative">

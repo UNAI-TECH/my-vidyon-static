@@ -431,7 +431,7 @@ export function CinematicHero({
                     <img
                         src={logoSrc || "/logo.png"}
                         alt="Hero Logo"
-                        className="hero-logo gsap-reveal w-[150px] sm:w-[280px] md:w-[350px] lg:w-[450px] xl:w-[500px] object-contain drop-shadow-2xl"
+                        className="hero-logo gsap-reveal w-[150px] sm:w-[250px] md:w-[300px] lg:w-[400px] xl:w-[500px] object-contain drop-shadow-2xl"
                     />
                 </div>
 

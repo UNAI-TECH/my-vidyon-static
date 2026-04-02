@@ -179,32 +179,32 @@ const About = () => {
                 <ScrollAnimation key={index} animation="fade-up" delay={300 + index * 100}>
                   <div className="group relative">
                     {/* Main Card */}
-                    <div className="relative p-8 rounded-3xl bg-gradient-to-br from-background via-background/95 to-background/90 backdrop-blur-xl border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-[0_0_30px_rgba(250,177,47,0.25)] transition-all duration-500 overflow-hidden">
+                    <div className="relative p-6 md:p-8 rounded-3xl bg-gradient-to-br from-background via-background/95 to-background/90 backdrop-blur-xl border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-[0_0_30px_rgba(250,177,47,0.25)] transition-all duration-500 overflow-hidden">
                       {/* Animated gradient background */}
                       <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                       {/* Glowing orb */}
                       <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/10 blur-3xl group-hover:bg-primary/20 transition-all duration-500" />
 
-                      <div className="relative flex items-start gap-6">
+                      <div className="relative flex flex-col sm:flex-row items-start gap-4 md:gap-6">
                         {/* Large Number */}
-                        <div className="relative shrink-0">
-                          <div className="text-7xl md:text-8xl font-heading font-black text-primary/10 group-hover:text-primary/20 transition-colors duration-500">
+                        <div className="relative shrink-0 mb-2 sm:mb-0">
+                          <div className="text-6xl md:text-8xl font-heading font-black text-primary/10 group-hover:text-primary/20 transition-colors duration-500">
                             {item.number}
                           </div>
                           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 border-2 border-primary/30 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                              <Award className="w-8 h-8 text-primary" />
+                            <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 border-2 border-primary/30 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                              <Award className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                             </div>
                           </div>
                         </div>
 
                         {/* Content */}
-                        <div className="flex-1 pt-2">
-                          <h3 className="font-heading text-xl md:text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                        <div className="flex-1 pt-1 md:pt-2 text-left">
+                          <h3 className="font-heading text-lg md:text-2xl font-bold mb-2 md:mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                             {item.title}
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                             {item.description}
                           </p>
                         </div>
