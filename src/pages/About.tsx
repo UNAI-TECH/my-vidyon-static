@@ -40,6 +40,7 @@ const milestones = [
 
 import SEO from "@/components/SEO";
 import Breadcrumb from "@/components/Breadcrumb";
+import AboutHero3D from "@/components/AboutHero3D";
 
 const About = () => {
   return (
@@ -55,13 +56,13 @@ const About = () => {
 
 
       {/* Hero */}
-      <section className="flex items-center relative overflow-hidden py-16 md:py-20 mt-16 md:mt-0">
+      <section className="flex items-center relative overflow-hidden py-16 md:py-20 mt-16 md:mt-20">
         <div className="absolute inset-0 bg-gradient-hero" />
 
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 mt-12 lg:mt-0">
               <ScrollAnimation animation="fade-right">
                 <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
                   About Us
@@ -84,18 +85,9 @@ const About = () => {
               </ScrollAnimation>
             </div>
 
-            {/* Right Image */}
+            {/* Right Image -> Now 3D Component */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <ScrollAnimation animation="fade-left" delay={300}>
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl opacity-50 animate-pulse-subtle" />
-                  <img
-                    src="/about-hero.png"
-                    alt="Transforming Education"
-                    className="relative w-full max-w-sm lg:max-w-md h-auto object-contain z-10 drop-shadow-2xl"
-                  />
-                </div>
-              </ScrollAnimation>
+              <AboutHero3D />
             </div>
           </div>
         </div>

@@ -1,0 +1,140 @@
+.about-hero-3d-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+    z-index: 10;
+}
+
+.about-hero-3d-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-3d-layer {
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+}
+
+/* Back Glow */
+.glow-layer {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    transform: translateZ(-150px);
+    pointer-events: none;
+}
+
+/* Main Dashboard Card */
+.main-card-3d {
+    width: 320px;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsla(var(--card-h), var(--card-s), var(--card-l), 0.8) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.2);
+    border-radius: 2.5rem;
+    padding: 2rem;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.1),
+        0 10px 20px rgba(250, 177, 47, 0.05);
+    transform: translateZ(0);
+    z-index: 10;
+}
+
+/* Floating Module: Attendance */
+.module-attendance {
+    width: 220px;
+    height: 70px;
+    background: hsla(var(--background-h), var(--background-s), var(--background-l), 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translate3d(120px, -140px, 120px);
+    z-index: 30;
+}
+
+/* Floating Module: Schedule */
+.module-schedule {
+    width: 200px;
+    height: 70px;
+    background: hsla(var(--background-h), var(--background-s), var(--background-l), 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translate3d(-140px, 160px, 80px);
+    z-index: 25;
+}
+
+/* Orbiting Icons */
+.orbit-icon {
+    width: 50px;
+    height: 50px;
+    background: hsl(var(--card));
+    border: 1px solid hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.2);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-1 {
+    transform: translate3d(-180px, -80px, 40px);
+}
+
+.icon-2 {
+    transform: translate3d(180px, 60px, 100px);
+}
+
+.icon-3 {
+    transform: translate3d(-50px, -180px, 60px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-hero-3d-container {
+        height: 350px;
+        transform: scale(0.8);
+    }
+
+    .module-attendance {
+        transform: translate3d(60px, -100px, 60px);
+    }
+
+    .module-schedule {
+        transform: translate3d(-60px, 100px, 40px);
+    }
+
+    .icon-1 {
+        transform: translate3d(-100px, -60px, 20px);
+    }
+
+    .icon-2 {
+        transform: translate3d(100px, 40px, 50px);
+    }
+
+    .icon-3 {
+        transform: translate3d(-30px, -120px, 30px);
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero-3d-container {
+        height: 300px;
+        transform: scale(0.65);
+    }
+}
