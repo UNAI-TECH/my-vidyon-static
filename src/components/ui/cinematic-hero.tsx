@@ -368,18 +368,18 @@ export function CinematicHero({
             });
 
             scrollTl
-                .to(".bg-grid-theme", { scale: 1.15, filter: isMobile ? "none" : "blur(8px)", opacity: 0.2, ease: "power2.inOut", duration: isMobile ? 4 : 2 }, 0)
-                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: isMobile ? 4 : 2 }, 0)
+                .to(".bg-grid-theme", { scale: 1.15, filter: isMobile ? "none" : "blur(8px)", opacity: 0.2, ease: "power2.inOut", duration: isMobile ? 2.5 : 2 }, 0)
+                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: isMobile ? 2.5 : 2 }, 0)
                 .to(".hero-logo", {
                     x: () => deltaX,
                     y: () => deltaY,
                     scale: () => targetScale,
                     ease: "power2.inOut",
-                    duration: isMobile ? 5 : 3
+                    duration: isMobile ? 3 : 3
                 }, 0)
-                .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, isMobile ? 5 : 3)
-                .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 5 : 3)
-                .to(".main-card", { y: isMobile ? 40 : 0, ease: "power3.inOut", duration: isMobile ? 3 : 2 }, isMobile ? 5 : 0)
+                .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, isMobile ? 3 : 3)
+                .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 3 : 3)
+                .to(".main-card", { y: isMobile ? 40 : 0, ease: "power3.inOut", duration: isMobile ? 2.5 : 2 }, isMobile ? 2 : 0)
                 .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 2 : 1.5 })
                 .fromTo(".mockup-scroll-wrapper",
                     { y: 300, z: -500, rotationX: 50, rotationY: -30, autoAlpha: 0, scale: 0.6 },
@@ -431,20 +431,20 @@ export function CinematicHero({
                     <img
                         src={logoSrc || "/logo.png"}
                         alt="Hero Logo"
-                        className="hero-logo gsap-reveal w-[180px] sm:w-[280px] md:w-[350px] lg:w-[450px] xl:w-[500px] object-contain drop-shadow-2xl"
+                        className="hero-logo gsap-reveal w-[150px] sm:w-[280px] md:w-[350px] lg:w-[450px] xl:w-[500px] object-contain drop-shadow-2xl"
                     />
                 </div>
 
                 {/* RIGHT: Texts */}
                 <div className="flex flex-col items-center justify-center text-center w-full md:w-1/2">
-                    <h1 className="text-track gsap-reveal text-3d-matte text-[2.1rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
+                    <h1 className="text-track gsap-reveal text-3d-matte text-[1.75rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
                         {tagline1}
                     </h1>
-                    <h1 className="text-days gsap-reveal text-amber-matte text-[2.1rem] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
+                    <h1 className="text-days gsap-reveal text-amber-matte text-[1.75rem] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
                         {tagline2}
                     </h1>
                     {tagline3 && (
-                        <h1 className="text-solutions gsap-reveal text-primary-matte text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter">
+                        <h1 className="text-solutions gsap-reveal text-primary-matte text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter">
                             {tagline3}
                         </h1>
                     )}
@@ -453,14 +453,14 @@ export function CinematicHero({
 
             {/* BACKGROUND LAYER 2: Tactile CTA Buttons */}
             <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-full px-4 gsap-reveal pointer-events-auto will-change-transform">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-3d-matte">
+                <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-3d-matte">
                     {ctaHeading}
                 </h2>
-                <p className="text-muted-foreground text-lg md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed">
+                <p className="text-muted-foreground text-base md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed">
                     {ctaDescription}
                 </p>
-                <div className="mt-4 inline-flex items-center justify-center px-10 py-5 rounded-full launching-badge-premium">
-                    <span className="text-shimmer font-black tracking-widest text-xl md:text-3xl uppercase">
+                <div className="mt-4 inline-flex items-center justify-center px-8 py-4 md:px-10 md:py-5 rounded-full launching-badge-premium">
+                    <span className="text-shimmer font-black tracking-widest text-lg md:text-3xl uppercase">
                         Launching soon...
                     </span>
                 </div>

@@ -8,9 +8,9 @@ import ScrollAnimation from "./ScrollAnimation";
 
 const stakeholders = [
   {
-    icon: School,
-    title: "Students",
-    description: "Easy access to academic information, coursework, and results.",
+    icon: Building2,
+    title: "Administration",
+    description: "Centralized system-wide control with complete operational oversight.",
   },
   {
     icon: BookOpenText,
@@ -18,14 +18,14 @@ const stakeholders = [
     description: "Complete teaching and classroom management tools in one platform.",
   },
   {
+    icon: School,
+    title: "Students",
+    description: "Easy access to academic information, coursework, and results.",
+  },
+  {
     icon: Users,
     title: "Parents",
     description: "Real-time visibility into attendance, academics, and institutional updates.",
-  },
-  {
-    icon: Building2,
-    title: "Administration",
-    description: "Centralized system-wide control with complete operational oversight.",
   },
 ];
 
