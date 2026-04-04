@@ -162,7 +162,7 @@ const ERPSolutions = () => {
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={100}>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 max-w-4xl">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 max-w-4xl">
               All-in-One{" "}
               <span className="text-gradient">School ERP Platform</span>
             </h1>
@@ -203,7 +203,7 @@ const ERPSolutions = () => {
                 </p>
               </ScrollAnimation>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {modules.map((module, index) => (
                   <ScrollAnimation key={index} animation="fade-up" delay={index * 50}>
                     <div className={`card-elevated p-6 h-full hover:border-primary/30 ${module.highlight ? 'border-primary/50 relative' : ''}`}>

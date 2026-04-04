@@ -68,21 +68,21 @@ export const ERPSection = () => {
         <div className="relative">
 
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
             {stakeholders.map((stakeholder, index) => (
               <ScrollAnimation key={index} animation="fade-up" delay={index * 150}>
                 <div className="group relative flex flex-col items-center text-center">
                   {/* Floating Icon Bubble with Geometric Animation */}
-                  <div className="relative mb-6 w-24 h-24 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-primary/5 rounded-3xl rotate-45 group-hover:rotate-90 transition-transform duration-500 ease-out shadow-sm" />
-                    <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-12 group-hover:rotate-0 transition-transform duration-500 ease-out shadow-sm" />
-                    <stakeholder.icon className="relative z-10 w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                  <div className="relative mb-4 w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-primary/5 rounded-2xl sm:rounded-3xl rotate-45 group-hover:rotate-90 transition-transform duration-500 ease-out shadow-sm" />
+                    <div className="absolute inset-0 bg-primary/5 rounded-2xl sm:rounded-3xl -rotate-12 group-hover:rotate-0 transition-transform duration-500 ease-out shadow-sm" />
+                    <stakeholder.icon className="relative z-10 w-7 h-7 sm:w-10 sm:h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
 
-                  <h3 className="font-heading font-bold text-2xl mb-3 tracking-wide">
+                  <h3 className="font-heading font-bold text-xl sm:text-2xl mb-2 tracking-wide">
                     {stakeholder.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm max-w-[200px] mx-auto">
+                  <p className="text-muted-foreground leading-relaxed text-sm max-w-[250px] mx-auto">
                     {stakeholder.description}
                   </p>
                 </div>

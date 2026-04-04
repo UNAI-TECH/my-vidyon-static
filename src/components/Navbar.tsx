@@ -45,15 +45,17 @@ export const Navbar = () => {
 
   return (
     <header
-      className={cn('sticky top-0 z-50 w-full border-b border-transparent transition-all duration-300', {
+      className={cn('sticky top-0 z-[100] w-full border-b border-transparent transition-all duration-300', {
         'bg-background/95 supports-[backdrop-filter]:bg-background/50 border-border backdrop-blur-lg shadow-sm':
           scrolled,
       })}
     >
       <nav className="container-custom flex h-20 items-center justify-between relative">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 font-heading text-2xl font-bold shrink-0 z-20">
-          <img id="nav-logo" src="/logo.png" alt="My Vidyon" className="h-12 w-auto opacity-0" />
+        <Link to="/" className="flex items-center gap-2 font-heading text-2xl font-bold shrink-0 z-50">
+          <div className="h-10 md:h-12 w-[120px] md:w-[150px] flex items-center">
+            <img id="nav-logo" src="/logo.png" alt="My Vidyon" className="h-full w-auto opacity-0" />
+          </div>
         </Link>
 
         {/* Desktop Menu - Centered */}
@@ -132,20 +134,20 @@ export const Navbar = () => {
           size="icon"
           variant="outline"
           onClick={() => setOpen(!open)}
-          className="lg:hidden z-50 ml-auto"
+          className="lg:hidden z-50 ml-auto touch-target w-11 h-11"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label="Toggle menu"
         >
-          <MenuToggleIcon open={open} className="size-5" duration={300} />
+          <MenuToggleIcon open={open} className="size-6" duration={300} />
         </Button>
       </nav>
 
       {/* Mobile Menu */}
       <MobileMenu open={open} className="flex flex-col gap-4 overflow-y-auto pt-20 pb-10">
         <div className="flex flex-col gap-4 px-4">
-          <Link to="/" className="text-lg font-semibold py-2 border-b" onClick={() => setOpen(false)}>Home</Link>
-          <Link to="/about" className="text-lg font-semibold py-2 border-b" onClick={() => setOpen(false)}>About Us</Link>
+          <Link to="/" className="text-lg font-semibold py-3 border-b flex items-center min-h-[44px]" onClick={() => setOpen(false)}>Home</Link>
+          <Link to="/about" className="text-lg font-semibold py-3 border-b flex items-center min-h-[44px]" onClick={() => setOpen(false)}>About Us</Link>
 
           <MobileDropdown title="Services">
             <MobileLink
@@ -157,9 +159,9 @@ export const Navbar = () => {
           </MobileDropdown>
 
 
-          <Link to="/features" className="text-lg font-semibold py-2 border-b" onClick={() => setOpen(false)}>Features</Link>
-          <Link to="/careers" className="text-lg font-semibold py-2 border-b" onClick={() => setOpen(false)}>Careers</Link>
-          <Link to="/contact" className="text-lg font-semibold py-2 border-b" onClick={() => setOpen(false)}>Contact</Link>
+          <Link to="/features" className="text-lg font-semibold py-3 border-b flex items-center min-h-[44px]" onClick={() => setOpen(false)}>Features</Link>
+          <Link to="/careers" className="text-lg font-semibold py-3 border-b flex items-center min-h-[44px]" onClick={() => setOpen(false)}>Careers</Link>
+          <Link to="/contact" className="text-lg font-semibold py-3 border-b flex items-center min-h-[44px]" onClick={() => setOpen(false)}>Contact</Link>
         </div>
       </MobileMenu>
     </header>
@@ -172,10 +174,10 @@ function MobileDropdown({ title, children }: { title: string, children: React.Re
     <div className="flex flex-col border-b">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between text-lg font-semibold py-2 w-full text-left bg-transparent"
+        className="flex items-center justify-between text-lg font-semibold py-3 w-full text-left bg-transparent min-h-[44px]"
       >
         {title}
-        <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180")} />
+        <ChevronDown className={cn("h-5 w-5 transition-transform duration-200", isOpen && "rotate-180")} />
       </button>
       <div className={cn("grid transition-all duration-200 ease-in-out overflow-hidden", isOpen ? "grid-rows-[1fr] pb-2" : "grid-rows-[0fr]")}>
         <div className="min-h-0 flex flex-col gap-2">
@@ -222,15 +224,15 @@ function MobileLink({
     <Link
       to={href}
       onClick={onClick}
-      className={cn("w-full flex flex-row gap-x-3 items-start p-3 rounded-lg hover:bg-accent transition-colors group", className)}
+      className={cn("w-full flex flex-row gap-x-4 items-center p-4 rounded-xl hover:bg-accent transition-colors group min-h-[60px]", className)}
       {...props}
     >
-      <div className="bg-primary/10 group-hover:bg-primary/20 flex shrink-0 aspect-square size-10 items-center justify-center rounded-md border border-primary/20 shadow-sm transition-colors">
-        <Icon className="text-primary size-5" />
+      <div className="bg-primary/10 group-hover:bg-primary/20 flex shrink-0 aspect-square size-12 items-center justify-center rounded-lg border border-primary/20 shadow-sm transition-colors">
+        <Icon className="text-primary size-6" />
       </div>
       <div className="flex flex-col items-start justify-center">
-        <span className="font-medium text-sm text-foreground/90 group-hover:text-primary transition-colors">{title}</span>
-        <span className="text-muted-foreground text-xs line-clamp-2 mt-0.5">{description}</span>
+        <span className="font-semibold text-base text-foreground/90 group-hover:text-primary transition-colors">{title}</span>
+        <span className="text-muted-foreground text-sm line-clamp-2 mt-0.5">{description}</span>
       </div>
     </Link>
   );

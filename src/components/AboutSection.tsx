@@ -64,7 +64,7 @@ export const AboutSection = () => {
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={100}>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Smart ERP Software for <span className="text-gradient">Modern Schools</span>
             </h2>
           </ScrollAnimation>

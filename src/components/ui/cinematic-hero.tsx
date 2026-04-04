@@ -368,17 +368,18 @@ export function CinematicHero({
             });
 
             scrollTl
-                .to(".bg-grid-theme", { scale: 1.15, filter: isMobile ? "none" : "blur(8px)", opacity: 0.2, ease: "power2.inOut", duration: isMobile ? 2.5 : 2 }, 0)
-                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: isMobile ? 2.5 : 2 }, 0)
+                .to(".bg-grid-theme", { scale: 1.15, filter: isMobile ? "none" : "blur(8px)", opacity: 0.2, ease: "linear", duration: 2 }, 0)
+                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: 2 }, 0)
                 .to(".hero-logo", {
                     x: () => deltaX,
                     y: () => deltaY,
                     scale: () => targetScale,
                     ease: "power2.inOut",
-                    duration: isMobile ? 3 : 3
+                    duration: 3
                 }, 0)
-                .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.1 }, isMobile ? 3 : 3)
-                .to(".hero-logo", { autoAlpha: 0, duration: 0.1 }, isMobile ? 2.5 : 3)
+                // Frame-perfect swap
+                .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.01 }, 3)
+                .to(".hero-logo", { opacity: 0, visibility: "hidden", duration: 0.01 }, 3)
                 .to(".main-card", { autoAlpha: 1, y: isMobile ? 0 : 0, ease: "power3.inOut", duration: isMobile ? 1.5 : 2 }, isMobile ? 0.5 : 0)
                 .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 2 : 1.5 })
                 .fromTo(".mockup-scroll-wrapper",
@@ -399,9 +400,9 @@ export function CinematicHero({
                     scale: 0.9, y: -40, z: -200, autoAlpha: 0, ease: "power3.in", duration: 1.2, stagger: 0.05,
                 })
                 .to(".main-card", {
-                    width: isMobile ? "92vw" : "85vw",
-                    height: isMobile ? "92vh" : "85vh",
-                    borderRadius: isMobile ? "32px" : "40px",
+                    width: isMobile ? "100vw" : "85vw",
+                    height: isMobile ? "100vh" : "85vh",
+                    borderRadius: isMobile ? "0px" : "40px",
                     ease: "expo.inOut",
                     duration: 1.2
                 }, "pullback")
@@ -425,9 +426,9 @@ export function CinematicHero({
             <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-40" aria-hidden="true" />
 
             {/* BACKGROUND LAYER: Hero Texts */}
-            <div className="hero-text-wrapper absolute inset-0 z-10 flex flex-col md:flex-row items-center justify-start md:justify-center pt-52 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-8 md:-translate-y-20">
+            <div className="hero-text-wrapper absolute inset-0 z-40 flex flex-col md:flex-row items-center justify-start md:justify-center pt-52 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-8 md:-translate-y-20">
                 {/* LEFT: Logo */}
-                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-4 md:mt-0">
+                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-4 md:mt-0 z-40">
                     <img
                         src={logoSrc || "/logo.png"}
                         alt="Hero Logo"
@@ -437,10 +438,10 @@ export function CinematicHero({
 
                 {/* RIGHT: Texts */}
                 <div className="flex flex-col items-center justify-center text-center w-full md:w-1/2">
-                    <h1 className="text-track gsap-reveal text-3d-matte text-[1.75rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
+                    <h1 className="text-track gsap-reveal text-3d-matte text-[1.5rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
                         {tagline1}
                     </h1>
-                    <h1 className="text-days gsap-reveal text-amber-matte text-[1.75rem] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
+                    <h1 className="text-days gsap-reveal text-amber-matte text-[1.5rem] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
                         {tagline2}
                     </h1>
                     {tagline3 && (
@@ -470,7 +471,7 @@ export function CinematicHero({
             <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none" style={{ perspective: "1500px" }}>
                 <div
                     ref={mainCardRef}
-                    className="main-card premium-depth-card relative overflow-hidden gsap-reveal flex items-center justify-center pointer-events-auto w-[92vw] md:w-[85vw] h-[92vh] md:h-[85vh] rounded-[32px] md:rounded-[40px]"
+                    className="main-card premium-depth-card relative overflow-hidden gsap-reveal flex items-center justify-center pointer-events-auto w-[100vw] md:w-[85vw] h-[100vh] md:h-[85vh] rounded-none md:rounded-[40px]"
                 >
                     <div className="card-sheen" aria-hidden="true" />
 
@@ -500,10 +501,10 @@ export function CinematicHero({
 
                         {/* IPHONE MOCKUP CONTENT */}
                         <div
-                            className="mockup-scroll-wrapper order-2 lg:order-2 relative z-20 flex items-center justify-center w-full h-full max-w-[300px] sm:max-w-md mx-auto lg:pt-20"
+                            className="mockup-scroll-wrapper order-2 lg:order-2 relative z-20 flex items-center justify-center w-full h-full max-w-[280px] sm:max-w-md mx-auto lg:pt-20"
                             style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
                         >
-                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.45] sm:scale-[0.6] md:scale-[0.8] lg:scale-[0.82]">
+                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.4] xs:scale-[0.5] sm:scale-[0.6] md:scale-[0.8] lg:scale-[0.82]">
 
                                 <div
                                     ref={mockupRef}

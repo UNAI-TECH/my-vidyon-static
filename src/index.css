@@ -120,6 +120,7 @@
     @apply bg-background text-foreground font-body antialiased;
     overflow-x: hidden;
     width: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1,
@@ -195,6 +196,11 @@
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Minimum touch target for mobile (44px) */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
 
   /* Text Gradient */
