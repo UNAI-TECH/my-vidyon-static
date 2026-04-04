@@ -316,19 +316,21 @@ export function CinematicHero({
         const isMobile = window.innerWidth < 768;
 
         const ctx = gsap.context(() => {
-            gsap.set(".hero-logo", { autoAlpha: 0, x: -60, scale: 0.85, filter: isMobile ? "none" : "blur(8px)" });
-            gsap.set(".text-track", { autoAlpha: 0, y: 60, scale: 0.85, filter: isMobile ? "none" : "blur(8px)", rotationX: -20 });
+            gsap.set(".hero-logo", { autoAlpha: 0, x: isMobile ? 0 : -60, y: isMobile ? -40 : 0, scale: isMobile ? 0.7 : 0.85, filter: isMobile ? "none" : "blur(8px)" });
+            // Initial states for premium entrance
+            gsap.set(".hero-logo", { autoAlpha: 0, x: -100, scale: 0.8, filter: isMobile ? "none" : "blur(12px)" });
+            gsap.set(".text-track", { autoAlpha: 1, y: isMobile ? 30 : 60, clipPath: "inset(0 100% 0 0)", rotationX: -20 });
             gsap.set(".text-days", { autoAlpha: 1, clipPath: "inset(0 100% 0 0)" });
             gsap.set(".text-solutions", { autoAlpha: 1, clipPath: "inset(0 100% 0 0)" });
             gsap.set(".counter-val", { innerText: 0 });
             gsap.set(".main-card", { y: window.innerHeight + 200, autoAlpha: 1 });
             gsap.set([".card-left-text", ".card-right-text", ".mockup-scroll-wrapper", ".floating-badge", ".phone-widget"], { autoAlpha: 0 });
-            gsap.set(".cta-wrapper", { autoAlpha: 0, scale: 0.8, filter: isMobile ? "none" : "blur(8px)" });
+            gsap.set(".cta-wrapper", { autoAlpha: 0, scale: isMobile ? 0.9 : 0.8, filter: isMobile ? "none" : "blur(8px)" });
 
             const introTl = gsap.timeline({ delay: 0.3 });
             introTl
                 .to(".hero-logo", { duration: 1.8, autoAlpha: 1, x: 0, scale: 1, filter: "none", ease: "expo.out" })
-                .to(".text-track", { duration: 1.8, autoAlpha: 1, y: 0, scale: 1, filter: "none", rotationX: 0, ease: "expo.out" }, "<")
+                .to(".text-track", { duration: 1.4, clipPath: "inset(0 0% 0 0)", y: 0, rotationX: 0, ease: "power4.inOut" }, "-=1.4")
                 .to(".text-days", { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.2")
                 .to(".text-solutions", { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.0");
 
@@ -358,9 +360,9 @@ export function CinematicHero({
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top top",
-                    end: isMobile ? "+=500" : "+=1800",
+                    end: isMobile ? "+=500" : "+=900", // Shorter duration for snappier feel
                     pin: true,
-                    scrub: true,
+                    scrub: 1, // Smooth scrub for natural feel
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
                     onRefresh: calculateOffsets
@@ -369,45 +371,45 @@ export function CinematicHero({
 
             scrollTl
                 .to(".bg-grid-theme", { scale: 1.15, filter: isMobile ? "none" : "blur(8px)", opacity: 0.2, ease: "linear", duration: 2 }, 0)
-                .to([".text-track", ".text-days", ".text-solutions"], { scale: 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: 2 }, 0)
+                .to([".text-track", ".text-days", ".text-solutions"], { scale: isMobile ? 1.2 : 1.5, filter: isMobile ? "none" : "blur(8px)", autoAlpha: 0, ease: "power2.inOut", duration: 2 }, 1.5) // Delayed fade-out even more
                 .to(".hero-logo", {
                     x: () => deltaX,
                     y: () => deltaY,
                     scale: () => targetScale,
                     ease: "power2.inOut",
-                    duration: 3
+                    duration: 2 // Faster logo move
                 }, 0)
                 // Frame-perfect swap
-                .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.01 }, 3)
-                .to(".hero-logo", { opacity: 0, visibility: "hidden", duration: 0.01 }, 3)
-                .to(".main-card", { autoAlpha: 1, y: isMobile ? 0 : 0, ease: "power3.inOut", duration: isMobile ? 1.5 : 2 }, isMobile ? 0.5 : 0)
-                .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 2 : 1.5 })
+                .to(document.getElementById("nav-logo"), { opacity: 1, duration: 0.01 }, 2)
+                .to(".hero-logo", { opacity: 0, visibility: "hidden", duration: 0.01 }, 2)
+                .to(".main-card", { autoAlpha: 1, y: isMobile ? 0 : 0, ease: "power3.inOut", duration: isMobile ? 1.2 : 1.5 }, isMobile ? 0.3 : 0)
+                .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: isMobile ? 1.5 : 1.2 })
                 .fromTo(".mockup-scroll-wrapper",
                     { y: 300, z: -500, rotationX: 50, rotationY: -30, autoAlpha: 0, scale: 0.6 },
-                    { y: 0, z: 0, rotationX: 0, rotationY: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: isMobile ? 3 : 2.5 }, isMobile ? "-=0.5" : "-=0.8"
+                    { y: 0, z: 0, rotationX: 0, rotationY: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: isMobile ? 2 : 1.8 }, isMobile ? "-=0.3" : "-=0.5"
                 )
-                .fromTo(".phone-widget", { y: 40, autoAlpha: 0, scale: 0.95 }, { y: 0, autoAlpha: 1, scale: 1, stagger: 0.15, ease: "back.out(1.2)", duration: isMobile ? 2 : 1.5 }, "-=1.5")
-                .to(".progress-ring", { strokeDashoffset: 60, duration: isMobile ? 2.5 : 2, ease: "power3.inOut" }, "-=1.2")
-                .to(".counter-val", { innerHTML: metricValue, snap: { innerHTML: 1 }, duration: isMobile ? 2.5 : 2, ease: "expo.out" }, "-=2.0")
-                .fromTo(".floating-badge", { y: 100, autoAlpha: 0, scale: 0.7, rotationZ: -10 }, { y: 0, autoAlpha: 1, scale: 1, rotationZ: 0, ease: "back.out(1.5)", duration: isMobile ? 2 : 1.5, stagger: 0.2 }, "-=2.0")
-                .fromTo(".card-left-text", { x: -50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, ease: "power4.out", duration: isMobile ? 2 : 1.5 }, "-=1.5")
-                .fromTo(".card-right-text", { x: 50, autoAlpha: 0, scale: 0.8 }, { x: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: isMobile ? 2 : 1.5 }, "<")
-                .to({}, { duration: 0.4 })
+                .fromTo(".phone-widget", { y: 40, autoAlpha: 0, scale: 0.95 }, { y: 0, autoAlpha: 1, scale: 1, stagger: 0.1, ease: "back.out(1.2)", duration: isMobile ? 1.5 : 1.2 }, "-=1.0")
+                .to(".progress-ring", { strokeDashoffset: 60, duration: isMobile ? 1.5 : 1.2, ease: "power3.inOut" }, "-=0.8")
+                .to(".counter-val", { innerHTML: metricValue, snap: { innerHTML: 1 }, duration: isMobile ? 1.5 : 1.2, ease: "expo.out" }, "-=1.5")
+                .fromTo(".floating-badge", { y: 100, autoAlpha: 0, scale: 0.7, rotationZ: -10 }, { y: 0, autoAlpha: 1, scale: 1, rotationZ: 0, ease: "back.out(1.5)", duration: isMobile ? 1.5 : 1.2, stagger: 0.15 }, "-=1.5")
+                .fromTo(".card-left-text", { x: -50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, ease: "power4.out", duration: isMobile ? 1.5 : 1.2 }, "-=1.0")
+                .fromTo(".card-right-text", { x: 50, autoAlpha: 0, scale: 0.8 }, { x: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: isMobile ? 1.5 : 1.2 }, "<")
+                .to({}, { duration: 0.2 })
                 .set(".hero-text-wrapper", { autoAlpha: 0 })
                 .set(".cta-wrapper", { autoAlpha: 1 })
-                .to({}, { duration: 0.3 })
+                .to({}, { duration: 0.2 })
                 .to([".mockup-scroll-wrapper", ".floating-badge", ".card-left-text", ".card-right-text"], {
-                    scale: 0.9, y: -40, z: -200, autoAlpha: 0, ease: "power3.in", duration: 1.2, stagger: 0.05,
+                    scale: 0.9, y: -40, z: -200, autoAlpha: 0, ease: "power3.in", duration: 1.0, stagger: 0.05,
                 })
                 .to(".main-card", {
-                    width: isMobile ? "100vw" : "85vw",
-                    height: isMobile ? "100vh" : "85vh",
+                    width: isMobile ? "100.1vw" : "85vw",
+                    height: isMobile ? "100.1vh" : "85vh",
                     borderRadius: isMobile ? "0px" : "40px",
                     ease: "expo.inOut",
-                    duration: 1.2
+                    duration: 1.0
                 }, "pullback")
-                .to(".cta-wrapper", { scale: 1, filter: "blur(0px)", ease: "expo.inOut", duration: 1.2 }, "pullback")
-                .to(".main-card", { y: -window.innerHeight - 300, ease: "power3.in", duration: 1.0 });
+                .to(".cta-wrapper", { scale: 1, filter: "blur(0px)", ease: "expo.inOut", duration: 1.0 }, "pullback")
+                .to(".main-card", { y: -window.innerHeight - 300, ease: "power3.in", duration: 0.8 });
 
         }, containerRef);
 
@@ -417,7 +419,7 @@ export function CinematicHero({
     return (
         <div
             ref={containerRef}
-            className={cn("relative w-full h-screen overflow-hidden flex items-center justify-center bg-background text-foreground font-sans antialiased", className)}
+            className={cn("relative w-full h-screen flex items-center justify-center bg-background text-foreground font-sans antialiased", className)}
             style={{ perspective: "1500px" }}
             {...props}
         >
@@ -426,26 +428,26 @@ export function CinematicHero({
             <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-40" aria-hidden="true" />
 
             {/* BACKGROUND LAYER: Hero Texts */}
-            <div className="hero-text-wrapper absolute inset-0 z-40 flex flex-col md:flex-row items-center justify-start md:justify-center pt-52 md:pt-0 space-y-12 md:space-y-0 md:justify-between max-w-7xl mx-auto px-4 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-8 md:-translate-y-20">
+            <div className="hero-text-wrapper absolute inset-0 z-40 flex flex-col md:flex-row items-center justify-start md:justify-center pt-32 sm:pt-44 md:pt-0 space-y-6 sm:space-y-10 md:space-y-0 md:justify-between max-w-7xl mx-auto px-6 lg:px-12 w-full will-change-transform transform-style-3d -translate-y-2 sm:-translate-y-4 md:-translate-y-20">
                 {/* LEFT: Logo */}
-                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-4 md:mt-0 z-40">
+                <div className="hero-logo-wrapper w-full md:w-1/2 flex justify-center md:justify-start -mt-2 md:mt-0 z-40">
                     <img
                         src={logoSrc || "/logo.png"}
                         alt="Hero Logo"
-                        className="hero-logo gsap-reveal w-[150px] sm:w-[250px] md:w-[300px] lg:w-[400px] xl:w-[500px] object-contain drop-shadow-2xl"
+                        className="hero-logo gsap-reveal w-[100px] sm:w-[180px] md:w-[220px] lg:w-[350px] xl:w-[450px] object-contain drop-shadow-2xl"
                     />
                 </div>
 
                 {/* RIGHT: Texts */}
                 <div className="flex flex-col items-center justify-center text-center w-full md:w-1/2">
-                    <h1 className="text-track gsap-reveal text-3d-matte text-[1.5rem] sm:text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-2">
+                    <h1 className="text-track gsap-reveal text-3d-matte text-[1.25rem] sm:text-4xl md:text-5xl lg:text-7xl xl:text-[80px] font-bold tracking-tight mb-2">
                         {tagline1}
                     </h1>
-                    <h1 className="text-days gsap-reveal text-amber-matte text-[1.5rem] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight mb-1">
+                    <h1 className="text-days gsap-reveal text-amber-matte text-[1.25rem] sm:text-4xl md:text-5xl lg:text-7xl xl:text-[80px] font-extrabold tracking-tight mb-1">
                         {tagline2}
                     </h1>
                     {tagline3 && (
-                        <h1 className="text-solutions gsap-reveal text-primary-matte text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter">
+                        <h1 className="text-solutions gsap-reveal text-primary-matte text-xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tighter">
                             {tagline3}
                         </h1>
                     )}
@@ -454,14 +456,14 @@ export function CinematicHero({
 
             {/* BACKGROUND LAYER 2: Tactile CTA Buttons */}
             <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-full px-4 gsap-reveal pointer-events-auto will-change-transform">
-                <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-3d-matte">
+                <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold mb-6 tracking-tight text-3d-matte">
                     {ctaHeading}
                 </h2>
-                <p className="text-muted-foreground text-base md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed">
+                <p className="text-muted-foreground text-sm md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed">
                     {ctaDescription}
                 </p>
-                <div className="mt-4 inline-flex items-center justify-center px-8 py-4 md:px-10 md:py-5 rounded-full launching-badge-premium">
-                    <span className="text-shimmer font-black tracking-widest text-lg md:text-3xl uppercase">
+                <div className="mt-4 inline-flex items-center justify-center px-8 py-4 md:px-10 md:py-5 rounded-full launching-badge-premium overflow-hidden">
+                    <span className="text-shimmer font-black tracking-widest text-[14px] md:text-3xl uppercase">
                         Launching soon...
                     </span>
                 </div>
@@ -476,11 +478,11 @@ export function CinematicHero({
                     <div className="card-sheen" aria-hidden="true" />
 
                     {/* DYNAMIC RESPONSIVE GRID */}
-                    <div className="relative w-full h-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-12 flex flex-col justify-center sm:justify-evenly gap-3 sm:gap-6 lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 pt-20 pb-8 lg:py-0 overflow-y-auto lg:overflow-visible">
+                    <div className="relative w-full h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col justify-center gap-4 sm:gap-6 lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 pt-20 pb-8 lg:py-0 overflow-y-auto lg:overflow-visible">
 
                         {/* Mobile Only Heading */}
                         <div className="card-left-text lg:hidden w-full flex justify-center text-center z-20 px-2 shrink-0 order-1">
-                            <h3 className="text-foreground text-[1.15rem] sm:text-2xl font-extrabold tracking-tight leading-loose px-4">
+                            <h3 className="text-foreground text-[1.1rem] sm:text-2xl font-extrabold tracking-tight leading-snug px-4">
                                 {cardHeading}
                             </h3>
                         </div>
@@ -490,10 +492,10 @@ export function CinematicHero({
                                 <img
                                     src={logoSrc}
                                     alt={brandName}
-                                    className="h-10 sm:h-16 md:h-24 lg:h-32 w-auto object-contain drop-shadow-2xl"
+                                    className="h-10 sm:h-16 md:h-20 lg:h-32 w-auto object-contain drop-shadow-2xl"
                                 />
                             ) : (
-                                <h2 className="text-4xl md:text-[4rem] lg:text-[5rem] font-black uppercase tracking-tighter text-card-silver-matte lg:mt-0 text-center lg:text-right">
+                                <h2 className="text-4xl md:text-[3rem] lg:text-[5rem] font-black uppercase tracking-tighter text-card-silver-matte lg:mt-0 text-center lg:text-right">
                                     {brandName}
                                 </h2>
                             )}
@@ -501,10 +503,10 @@ export function CinematicHero({
 
                         {/* IPHONE MOCKUP CONTENT */}
                         <div
-                            className="mockup-scroll-wrapper order-2 lg:order-2 relative z-20 flex items-center justify-center w-full h-full max-w-[280px] sm:max-w-md mx-auto lg:pt-20"
+                            className="mockup-scroll-wrapper order-2 lg:order-2 relative z-20 flex items-center justify-center w-full h-auto max-w-[260px] sm:max-w-md mx-auto lg:pt-20"
                             style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
                         >
-                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.4] xs:scale-[0.5] sm:scale-[0.6] md:scale-[0.8] lg:scale-[0.82]">
+                            <div className="relative w-full h-full flex items-center justify-center transform scale-[0.45] sm:scale-[0.55] md:scale-[0.75] lg:scale-[0.82]">
 
                                 <div
                                     ref={mockupRef}
@@ -608,11 +610,11 @@ export function CinematicHero({
                             </div>
                         </div>
 
-                        <div className="card-left-text gsap-reveal order-3 lg:order-1 flex flex-col justify-center text-center lg:text-left z-20 w-full lg:max-w-none px-4 lg:px-0 shrink-0 -mt-6 lg:mt-0">
+                        <div className="card-left-text gsap-reveal order-3 lg:order-1 flex flex-col justify-center text-center lg:text-left z-20 w-full lg:max-w-none px-4 lg:px-0 shrink-0">
                             <h3 className="hidden lg:block text-foreground text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 lg:mb-5 tracking-tight leading-tight">
                                 {cardHeading}
                             </h3>
-                            <p className="text-foreground/80 text-xs sm:text-sm lg:text-lg font-normal leading-relaxed mx-auto lg:mx-0 max-w-sm lg:max-w-none px-2 lg:px-0">
+                            <p className="text-foreground/80 text-sm sm:text-base lg:text-lg font-normal leading-relaxed mx-auto lg:mx-0 max-w-sm lg:max-w-none px-2 lg:px-0">
                                 {cardDescription}
                             </p>
                         </div>

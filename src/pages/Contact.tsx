@@ -118,7 +118,7 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-28 pb-10 relative overflow-hidden">
+      <section className="pt-32 pb-16 md:pt-48 md:pb-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
 
         <div className="container-custom relative text-center">
@@ -129,13 +129,13 @@ const Contact = () => {
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={100}>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
               Let's <span className="text-gradient">Connect</span>
             </h1>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={200}>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Ready to transform your institution? Have questions? Our team is here
               to help you find the perfect solution.
             </p>

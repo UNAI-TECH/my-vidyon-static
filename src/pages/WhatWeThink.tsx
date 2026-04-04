@@ -80,9 +80,9 @@ const WhatWeThinkPage = () => {
 
 
                         {/* Right Content */}
-                        <div className="relative z-10 flex items-start justify-center pt-20 pb-12">
+                        <div className="relative z-10 flex items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-0 lg:pb-0">
                             <div className="w-full px-6 lg:px-12">
-                                <div className="max-w-2xl mx-auto text-center">
+                                <div className="max-w-2xl mx-auto text-center lg:text-left">
                                     <ScrollAnimation animation="fade-up">
                                         <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
                                             <span className="text-primary font-semibold text-sm">Insights & Perspectives</span>
@@ -90,13 +90,13 @@ const WhatWeThinkPage = () => {
                                     </ScrollAnimation>
 
                                     <ScrollAnimation animation="fade-up" delay={100}>
-                                        <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                                        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                                             What We <span className="text-gradient">Think</span>
                                         </h1>
                                     </ScrollAnimation>
 
                                     <ScrollAnimation animation="fade-up" delay={200}>
-                                        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                                        <p className="text-lg md:text-xl md:text-2xl text-muted-foreground leading-relaxed">
                                             Our philosophy, values, and vision for transforming education through innovative technology solutions.
                                         </p>
                                     </ScrollAnimation>

@@ -7,7 +7,7 @@ import SEO from "@/components/SEO";
 
 const AccessApplication = () => {
     return (
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-background pt-20">
             <SEO
                 title="Access Application - Candidate Portal"
                 description="Login to access your job applications and complete your candidate profile."

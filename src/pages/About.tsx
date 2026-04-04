@@ -39,12 +39,10 @@ const milestones = [
 ];
 
 import SEO from "@/components/SEO";
-import Breadcrumb from "@/components/Breadcrumb";
-import AboutHero3D from "@/components/AboutHero3D";
 
 const About = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-20">
       <SEO
         title="About Us - Transforming Education Technology"
         description="Learn about My Vidyon's mission to help schools run smarter. We provide simple, secure ERP solutions that reduce admin workload and empower educators. Trusted by 500+ institutions worldwide."
@@ -52,11 +50,10 @@ const About = () => {
         imageAlt="About My Vidyon - Transforming Education Through Technology"
       />
       <Navbar />
-      <Breadcrumb />
 
 
       {/* Hero */}
-      <section className="flex items-center relative overflow-hidden py-10 md:py-20 mt-12 md:mt-20">
+      <section className="flex items-center relative overflow-hidden py-20 md:py-32">
         <div className="absolute inset-0 bg-gradient-hero" />
 
         <div className="container-custom relative z-10">
@@ -70,14 +67,14 @@ const About = () => {
               </ScrollAnimation>
 
               <ScrollAnimation animation="fade-right" delay={100}>
-                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                   Smart Technology <br />for{" "}
                   <span className="text-gradient">Smarter Schools</span>
                 </h1>
               </ScrollAnimation>
 
               <ScrollAnimation animation="fade-right" delay={200}>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
                   We build intelligent school ERP solutions that simplify administration and strengthen
                   communication between school leaders, teachers, students, and parents all on one secure
                   platform.
@@ -85,9 +82,17 @@ const About = () => {
               </ScrollAnimation>
             </div>
 
-            {/* Right Image -> Now 3D Component */}
+            {/* Right Image */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <AboutHero3D />
+              <ScrollAnimation animation="fade-left" delay={400}>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-lg w-full">
+                  <img
+                    src="/about-hero.png"
+                    alt="About My Vidyon Illustration"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </ScrollAnimation>
             </div>
           </div>
         </div>

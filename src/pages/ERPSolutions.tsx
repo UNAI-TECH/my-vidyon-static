@@ -93,7 +93,7 @@ const ERPSolutions = () => {
   };
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-20">
       <SEO
         title="ERP Solutions - 12 Integrated Modules"
         description="Explore our comprehensive school ERP modules: Admission, Fees, Transport, Academics, Communication, and more. A complete system for modern schools with 9 integrated modules."
@@ -162,14 +162,14 @@ const ERPSolutions = () => {
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={100}>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 max-w-4xl">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 max-w-4xl leading-tight">
               All-in-One{" "}
               <span className="text-gradient">School ERP Platform</span>
             </h1>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={200}>
-            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8">
               A flexible, modular school ERP that brings academics, administration, and communication into one
               powerful system. Choose only what your school needs or run the full suite for complete control.
             </p>

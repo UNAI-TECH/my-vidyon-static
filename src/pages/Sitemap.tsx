@@ -1,7 +1,6 @@
-import Navbar from "@/components/Breadcrumb";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import Breadcrumb from "@/components/Breadcrumb";
 import { Link } from "react-router-dom";
 import { FileText, Users, Building2, Briefcase, MessageSquare, HelpCircle, Zap } from "lucide-react";
 
@@ -56,20 +55,19 @@ const Sitemap = () => {
                 imageAlt="My Vidyon Sitemap - Complete Website Navigation"
             />
             <Navbar />
-            <Breadcrumb />
 
             {/* Hero */}
-            <section className="pt-28 pb-10 relative overflow-hidden">
+            <section className="pt-32 pb-16 md:pt-48 md:pb-32 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-hero" />
 
                 <div className="container-custom relative text-center">
                     <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
                         Site Navigation
                     </span>
-                    <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
+                    <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                         <span className="text-gradient">Sitemap</span>
                     </h1>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                         Find all pages and resources on My Vidyon website
                     </p>
                 </div>

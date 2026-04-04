@@ -29,7 +29,7 @@ const LifeAtMyVidyonPage = () => {
     ];
 
     return (
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-background pt-20">
             <SEO
                 title="Life at My Vidyon - Employee Stories"
                 description="What is it like to work at My Vidyon? Read stories from our team members and see our vibrant office culture."
@@ -37,13 +37,13 @@ const LifeAtMyVidyonPage = () => {
             <Navbar />
 
             {/* Hero Section - Redesigned */}
-            <section className="relative py-8 md:py-12 overflow-hidden" style={{ backgroundColor: '#FEF3E2' }}>
+            <section className="relative py-20 md:py-32 overflow-hidden" style={{ backgroundColor: '#FEF3E2' }}>
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
                 {/* Back Button */}
-                <div className="container-custom relative z-10 pb-4">
+                <div className="container-custom relative z-10 pb-6">
                     <a
                         href="/careers"
                         className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors group"
@@ -54,23 +54,23 @@ const LifeAtMyVidyonPage = () => {
                 </div>
 
                 <div className="container-custom relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-8 md:gap-10 items-center">
+                    <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
                         {/* Left Content */}
                         <div>
                             <ScrollAnimation animation="fade-up">
-                                <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-3">
+                                <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
                                     <span className="text-primary font-semibold text-sm">Join Our Team</span>
                                 </div>
                             </ScrollAnimation>
 
                             <ScrollAnimation animation="fade-up" delay={100}>
-                                <h1 className="font-heading text-3xl md:text-4xl font-bold mb-3 leading-tight text-foreground">
+                                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight text-foreground">
                                     Life at <span className="text-gradient">My Vidyon</span>
                                 </h1>
                             </ScrollAnimation>
 
                             <ScrollAnimation animation="fade-up" delay={200}>
-                                <p className="text-sm md:text-base text-muted-foreground mb-5 leading-relaxed">
+                                <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
                                     Life at My Vidyon is built around innovation, collaboration, and work-life balance. Our ERP
                                     software team works on scalable education management solutions, smart campus systems, and
                                     cloud-based ERP platforms that drive real institutional growth.

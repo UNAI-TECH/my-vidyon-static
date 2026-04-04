@@ -91,7 +91,7 @@ const MyVidyonERPSoftware = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="pt-32 pb-20 bg-gradient-to-br from-primary/5 via-white to-blue-50">
+            <section className="pt-32 pb-16 md:pt-48 md:pb-32 bg-gradient-to-br from-primary/5 via-white to-blue-50">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -99,10 +99,10 @@ const MyVidyonERPSoftware = () => {
                         transition={{ duration: 0.6 }}
                         className="text-center"
                     >
-                        <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-6 leading-tight">
                             MyVidyon ERP Software
                         </h1>
-                        <p className="text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-8">
+                        <p className="text-lg md:text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-10">
                             The complete educational management platform that empowers institutions to streamline
                             operations, enhance learning outcomes, and drive growth. <strong>MyVidyon ERP</strong> is
                             trusted by 500+ institutions worldwide.

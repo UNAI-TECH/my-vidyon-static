@@ -117,7 +117,7 @@ const Features = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-28 pb-12 relative overflow-hidden">
+      <section className="pt-32 pb-16 md:pt-48 md:pb-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
 
         <div className="container-custom relative text-center">
@@ -128,13 +128,13 @@ const Features = () => {
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={100}>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 max-w-4xl mx-auto">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 max-w-4xl mx-auto leading-tight">
               Modern School ERP, <span className="text-gradient">Built for Real Classrooms</span>
             </h1>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={200}>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               A powerful, easy to use school ERP platform designed to simplify administration, improve
               academic management, and strengthen parent-school communication all in one system.
             </p>

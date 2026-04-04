@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -29,8 +29,10 @@ type LinkItem = {
 };
 
 export const Navbar = () => {
+  const location = useLocation();
   const [open, setOpen] = React.useState(false);
   const scrolled = useScroll(10);
+  const isHome = location.pathname === '/';
 
   React.useEffect(() => {
     if (open) {
@@ -54,7 +56,14 @@ export const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 font-heading text-2xl font-bold shrink-0 z-50">
           <div className="h-10 md:h-12 w-[120px] md:w-[150px] flex items-center">
-            <img id="nav-logo" src="/logo.png" alt="My Vidyon" className="h-full w-auto opacity-0" />
+            <img
+              id="nav-logo"
+              src="/logo.png"
+              alt="My Vidyon"
+              className={cn("h-full w-auto transition-opacity duration-300",
+                isHome ? "opacity-0" : "opacity-100"
+              )}
+            />
           </div>
         </Link>
 
@@ -200,7 +209,7 @@ function MobileMenu({ open, children, className, ...props }: MobileMenuProps) {
       id="mobile-menu"
       className={cn(
         'bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg',
-        'fixed top-0 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200',
+        'fixed top-0 right-0 bottom-0 left-0 z-[90] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200',
         className
       )}
       {...props}

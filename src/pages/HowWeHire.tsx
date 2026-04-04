@@ -39,7 +39,7 @@ const HowWeHirePage = () => {
     ];
 
     return (
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-background pt-20">
             <SEO
                 title="How We Hire - Recruitment Process"
                 description="Understand our hiring process. From application to offer, we ensure a transparent and fair experience for all candidates."
@@ -50,13 +50,13 @@ const HowWeHirePage = () => {
             <section className="relative py-20 md:py-32 overflow-hidden" style={{ backgroundColor: '#FEF3E2' }}>
                 <div className="container-custom relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
-                        <ScrollAnimation animation="fade-up">
-                            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
+                        <ScrollAnimation animation="fade-up" delay={100}>
+                            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight text-foreground">
                                 How We <span className="text-gradient">Hire</span>
                             </h1>
                         </ScrollAnimation>
 
-                        <ScrollAnimation animation="fade-up" delay={100}>
+                        <ScrollAnimation animation="fade-up" delay={200}>
                             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
                                 Our hiring process is designed to be transparent, fair, and focused on finding the right fit for both you and us.
                             </p>

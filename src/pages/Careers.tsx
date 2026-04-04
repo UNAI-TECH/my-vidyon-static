@@ -153,7 +153,7 @@ const CareersPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background pt-20">
             <SEO
                 title="Careers - Join Our Team"
                 description="Join My Vidyon and help shape the future of education technology. Explore job openings, our culture, and benefits."

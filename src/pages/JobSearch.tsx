@@ -6,7 +6,7 @@ import SEO from "@/components/SEO";
 
 const JobSearchPage = () => {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background pt-20">
             <SEO
                 title="Search Jobs - Career Opportunities"
                 description="Browse current openings at My Vidyon. Find roles in Engineering, Product, Sales, and Customer Success."

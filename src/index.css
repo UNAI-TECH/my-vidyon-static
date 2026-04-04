@@ -107,7 +107,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 80px;
   /* Account for fixed navbar */
   overflow-x: hidden;
@@ -120,7 +119,6 @@ html {
   }
 
   html {
-    scroll-behavior: smooth;
     overflow-x: hidden;
   }
 

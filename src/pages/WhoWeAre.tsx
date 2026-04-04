@@ -37,7 +37,7 @@ const WhoWeArePage = () => {
 
 
     return (
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-background pt-20">
             <SEO
                 title="Who We Are - Our Culture & Values"
                 description="Discover the people and values behind My Vidyon. We are a diverse team passionate about education and technology."
@@ -45,11 +45,11 @@ const WhoWeArePage = () => {
             <Navbar />
 
             {/* Hero Section - Bold Statement */}
-            <section className="relative py-16 md:py-20 overflow-hidden">
+            <section className="relative py-20 md:py-32 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
 
                 {/* Back Button */}
-                <div className="container-custom relative z-10 pb-4">
+                <div className="container-custom relative z-10 pb-6">
                     <a
                         href="/careers"
                         className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors group"
@@ -70,16 +70,15 @@ const WhoWeArePage = () => {
                             </ScrollAnimation>
 
                             <ScrollAnimation animation="fade-up" delay={100}>
-                                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                                     Who We <span className="text-gradient">Are</span>
                                 </h1>
                             </ScrollAnimation>
 
                             <ScrollAnimation animation="fade-up" delay={200}>
-                                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8">
+                                <p className="text-lg md:text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8">
                                     A team of ed-tech specialists delivering powerful ERP systems designed to simplify operations
                                     and improve educational outcomes.
-
                                 </p>
                             </ScrollAnimation>
 

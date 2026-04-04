@@ -26,13 +26,29 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Force immediate scroll to top on route change without smooth behavior conflict
+    window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    // Enable GSAP smooth scroll normalization globaly
+    ScrollTrigger.normalizeScroll(true);
+
+    // Optional: refine global ScrollTrigger defaults for better performance
+    ScrollTrigger.config({
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load,resize"
+    });
+  }, []);
 
   return null;
 };

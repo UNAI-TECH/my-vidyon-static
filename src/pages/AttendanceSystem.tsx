@@ -101,7 +101,7 @@ const AttendanceSystem = () => {
               </ScrollAnimation>
 
               <ScrollAnimation animation="fade-right" delay={100}>
-                <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5">
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                   Smart Attendance{" "}
                   <span className="text-gradient">Monitoring System</span>
                 </h1>
