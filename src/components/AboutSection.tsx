@@ -56,9 +56,9 @@ export const AboutSection = () => {
 
       <div className="container-custom relative">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto mb-8 md:mb-12">
           <ScrollAnimation animation="fade-up">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-2 md:mb-4">
               About My Vidyon
             </span>
           </ScrollAnimation>
@@ -96,7 +96,7 @@ export const AboutSection = () => {
         </ScrollAnimation>
 
         {/* Features Grid - Bento Style */}
-        <div className="mt-10">
+        <div className="mt-6 md:mt-10">
           <ScrollAnimation animation="fade-up" delay={450}>
             <MagicBento
               items={features}
@@ -114,7 +114,7 @@ export const AboutSection = () => {
 
         {/* CTA */}
         <ScrollAnimation animation="fade-up" delay={800}>
-          <div className="text-center mt-10">
+          <div className="text-center mt-8 md:mt-10">
             <Link to="/about" className="btn-primary">
               Learn More About Us
               <ChevronRight className="w-5 h-5" />

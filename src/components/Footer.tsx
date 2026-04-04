@@ -127,9 +127,8 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-background/10">
-        <div className="container-custom py-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="container-custom py-6 md:py-10 flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Partnership Badge */}
           <div className="order-1">
             <a

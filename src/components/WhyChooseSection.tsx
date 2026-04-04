@@ -26,7 +26,7 @@ export const WhyChooseSection = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <ScrollAnimation animation="fade-up" delay={100}>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                 Why Choose{" "}

@@ -151,7 +151,7 @@ const ERPSolutions = () => {
       <Navbar />
 
       {/* Hero */}
-      <section id="hero" className="min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden py-12 md:py-0">
+      <section id="hero" className="min-h-[70vh] md:min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden py-10 md:py-0">
         <div className="absolute inset-0 bg-gradient-hero" />
 
         <div className="container-custom relative">
@@ -188,7 +188,7 @@ const ERPSolutions = () => {
       {showContent && (
         <>
           {/* Modules Grid */}
-          <section id="modules-section" className="py-12 md:py-16">
+          <section id="modules-section" className="section-padding">
             <div className="container-custom">
               <ScrollAnimation animation="fade-up">
                 <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
@@ -197,7 +197,7 @@ const ERPSolutions = () => {
               </ScrollAnimation>
 
               <ScrollAnimation animation="fade-up" delay={100}>
-                <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+                <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8 md:mb-10">
                   Each module is designed to work independently or as part of the complete ecosystem.
                   Start small and scale as you grow.
                 </p>

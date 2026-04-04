@@ -10,9 +10,9 @@ const steps = [
 
 export const CTASection = () => {
   return (
-    <section className="py-12 md:py-16 relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
       <div className="container-custom">
-        <div className="relative rounded-3xl overflow-hidden">
+        <div className="relative rounded-2xl md:rounded-3xl overflow-hidden">
           {/* Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent" />
 
@@ -26,9 +26,9 @@ export const CTASection = () => {
           />
 
           {/* Content */}
-          <div className="relative px-8 py-12 md:px-16 md:py-16 text-center">
+          <div className="relative px-6 py-10 md:px-16 md:py-16 text-center">
             <ScrollAnimation animation="fade-up">
-              <span className="inline-block text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">
+              <span className="inline-block text-sm font-semibold text-white/80 uppercase tracking-wider mb-3 md:mb-4">
                 Transform Your Institution Today
               </span>
             </ScrollAnimation>

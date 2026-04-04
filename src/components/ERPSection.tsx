@@ -50,9 +50,9 @@ export const ERPSection = () => {
 
       <div className="container-custom relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-20">
           <ScrollAnimation animation="fade-up">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-2 md:mb-4">
               A Digital Transformation for Everyone
             </span>
           </ScrollAnimation>

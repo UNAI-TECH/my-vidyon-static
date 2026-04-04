@@ -106,6 +106,14 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  /* Account for fixed navbar */
+  overflow-x: hidden;
+  height: 100%;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -120,7 +128,12 @@
     @apply bg-background text-foreground font-body antialiased;
     overflow-x: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
     -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+    /* Prevent upward scroll beyond top */
   }
 
   h1,
@@ -191,7 +204,7 @@
 
   /* Section Styles */
   .section-padding {
-    @apply py-12 md:py-16;
+    @apply py-5 md:py-16;
   }
 
   .container-custom {

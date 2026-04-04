@@ -45,7 +45,7 @@ export const Navbar = () => {
 
   return (
     <header
-      className={cn('sticky top-0 z-[100] w-full border-b border-transparent transition-all duration-300', {
+      className={cn('fixed top-0 left-0 right-0 z-[100] w-full border-b border-transparent transition-all duration-300', {
         'bg-background/95 supports-[backdrop-filter]:bg-background/50 border-border backdrop-blur-lg shadow-sm':
           scrolled,
       })}
